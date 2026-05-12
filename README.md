@@ -79,7 +79,7 @@ I thrive in ambiguous, high‑stakes environments where the answer isn’t given
 - Enabled reliable billing (SN‑linked invoicing)
 - Usage logs used for continuous improvement across 5 countries
 - Freed internal IT capacity for the BNP Paribas project
-- 
+ 
 **Stack:**  
 `AppSheet` · `Google Cloud native DB` · `Chronopost API` · `Google Maps API`
 
