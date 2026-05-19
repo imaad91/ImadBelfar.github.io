@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Imad BELFAR — Ingénieur Industriel & Qualité</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white: #ffffff;
+  --bg: #fafaf8;
+  --ink: #0f0f0e;
+  --ink2: #3a3a36;
+  --muted: #7a7a72;
+  --border: #e8e8e2;
+  --accent: #1a3a6b;
+  --accent-light: #e8eef8;
+  --accent2: #c8400a;
+  --accent2-light: #fdf0eb;
+  --green: #0d5c3a;
+  --green-bg: #ebf7f1;
+  --green-border: #a8dfc4;
+  --amber: #7a4500;
+  --amber-bg: #fdf5e6;
+  --amber-border: #f5d49a;
+  --blue: #0f3d7a;
+  --blue-bg: #e8f0fb;
+  --blue-border: #b0cbf5;
+  --purple: #4a1d8a;
+  --purple-bg: #f2edfc;
+  --purple-border: #c9b5f0;
+  --gray: #4a4a45;
+  --gray-bg: #f2f2ee;
+  --gray-border: #d0d0c8;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .nav-logo, .hero-name {
+  font-family: 'Syne', sans-serif;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,250,248,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 60px;
+}
+.nav-logo {
+  font-size: 15px; font-weight: 700;
+  color: var(--ink); letter-spacing: -.02em;
+}
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--ink); text-decoration: none; }
+.nav-cta {
+  background: var(--accent); color: #fff !important;
+  padding: .4rem 1rem; border-radius: 6px; font-size: 13px;
+}
+.nav-cta:hover { background: #0f2a50 !important; }
+
+/* ── HERO ── */
+.hero-wrapper {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.hero {
+  max-width: 900px; margin: 0 auto;
+  padding: 6rem 3rem 5rem;
+  animation: fadeUp .7s ease both;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: .75rem;
+  margin-bottom: 2rem; flex-wrap: wrap;
+}
+.eyebrow-pill {
+  font-size: 11px; font-weight: 600; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--accent);
+  background: var(--accent-light); padding: .3rem .8rem;
+  border-radius: 99px; border: 1px solid var(--blue-border);
+}
+.eyebrow-avail {
+  font-size: 11px; font-weight: 600; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--green);
+  background: var(--green-bg); padding: .3rem .8rem;
+  border-radius: 99px; border: 1px solid var(--green-border);
+  display: flex; align-items: center; gap: .35rem;
+}
+.avail-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 500; letter-spacing: -.02em;
+  line-height: 1.05; color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: .6rem;
+}
+.hero-title {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 500; color: var(--muted);
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -.01em; margin-bottom: 2.5rem;
+}
+.hero-title span { color: var(--accent2); }
+
+.hero-intro {
+  font-size: 15.5px; color: var(--ink2); max-width: 680px;
+  line-height: 1.85; margin-bottom: 2.5rem;
+  border-left: 3px solid var(--accent2);
+  padding-left: 1.25rem;
+}
+.hero-intro strong { color: var(--ink); font-weight: 600; }
+
+.hero-context {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: .75rem; margin-bottom: 2.5rem;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.25rem;
+}
+.ctx-item { display: flex; flex-direction: column; gap: .2rem; }
+.ctx-label { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.ctx-val { font-size: 13.5px; font-weight: 500; color: var(--ink); }
+
+.hero-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 2.5rem; }
+.chip {
+  font-size: 12px; font-weight: 500; padding: .3rem .75rem;
+  border-radius: 6px; border: 1px solid var(--border);
+  color: var(--ink2); background: var(--white);
+}
+
+.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: var(--accent); color: #fff;
+  padding: .65rem 1.35rem; border-radius: 8px;
+  font-size: 13.5px; font-weight: 600; text-decoration: none;
+  transition: background .15s; font-family: 'DM Sans', sans-serif;
+}
+.btn-primary:hover { background: #0f2a50; text-decoration: none; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: var(--white); color: var(--ink2);
+  padding: .65rem 1.35rem; border-radius: 8px;
+  font-size: 13.5px; font-weight: 500; text-decoration: none;
+  border: 1px solid var(--border); transition: border-color .15s, color .15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.btn-ghost:hover { border-color: #9ca3af; color: var(--ink); text-decoration: none; }
+
+/* ── STATS ── */
+.stats-wrapper {
+  background: var(--ink);
+  max-width: 100%;
+}
+.stats-bar {
+  max-width: 900px; margin: 0 auto;
+  padding: 2rem 3rem;
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+.stat {
+  text-align: center; padding: 1rem;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+.stat:last-child { border-right: none; }
+.stat-val {
+  display: block; font-size: 1.6rem; font-weight: 800;
+  color: #fff; letter-spacing: -.03em;
+  font-family: 'Syne', sans-serif;
+}
+.stat-lbl { font-size: 11px; color: rgba(255,255,255,.5); margin-top: .2rem; line-height: 1.3; }
+
+/* ── SECTION ── */
+.section { padding: 4rem 3rem; max-width: 900px; margin: 0 auto; }
+.section-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.section-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent2);
+}
+.section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--ink); letter-spacing: -.02em;
+}
+.section-header-line {
+  flex: 1; height: 1px; background: var(--border);
+}
+
+/* ── PROJECT CARDS ── */
+.projects { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.pcard {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+  animation: fadeUp .55s ease both;
+}
+.pcard:hover { border-color: #ccc; box-shadow: var(--shadow-md); }
+.pcard:nth-child(1)  { animation-delay: .04s; }
+.pcard:nth-child(2)  { animation-delay: .08s; }
+.pcard:nth-child(3)  { animation-delay: .12s; }
+.pcard:nth-child(4)  { animation-delay: .16s; }
+.pcard:nth-child(5)  { animation-delay: .20s; }
+.pcard:nth-child(6)  { animation-delay: .24s; }
+.pcard:nth-child(7)  { animation-delay: .28s; }
+.pcard:nth-child(8)  { animation-delay: .32s; }
+.pcard:nth-child(9)  { animation-delay: .36s; }
+
+.pcard-stripe {
+  height: 3px;
+}
+.stripe-blue   { background: var(--accent); }
+.stripe-green  { background: #0d5c3a; }
+.stripe-purple { background: #4a1d8a; }
+.stripe-amber  { background: #b85a00; }
+.stripe-gray   { background: #6a6a62; }
+
+.pcard-inner { padding: 1.75rem 2rem; }
+
+.pcard-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;
+}
+.pcard-meta { display: flex; flex-direction: column; gap: .4rem; }
+.pcard-num {
+  font-size: 10.5px; font-weight: 700; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+.badge {
+  font-size: 11px; font-weight: 600; padding: .25rem .65rem;
+  border-radius: 5px; white-space: nowrap;
+}
+.badge-bnp    { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-border); }
+.badge-mypos  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-border); }
+.badge-bpce   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+.badge-avem   { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-border); }
+.badge-intern { background: var(--gray-bg);   color: var(--gray);   border: 1px solid var(--gray-border); }
+
+.pcard-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem; font-weight: 700; color: var(--ink);
+  margin-bottom: .4rem; letter-spacing: -.02em;
+  line-height: 1.3;
+}
+.pcard-hook {
+  font-size: 13.5px; color: var(--accent2); font-weight: 500;
+  margin-bottom: 1.1rem; font-style: italic;
+}
+
+/* Context block */
+.pcard-context {
+  background: var(--bg); border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: .85rem 1rem; margin-bottom: 1.1rem;
+  font-size: 12.5px; color: var(--muted); line-height: 1.6;
+}
+.pcard-context strong { color: var(--ink2); font-weight: 600; }
+.pcard-context-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
+  display: block; margin-bottom: .3rem;
+}
+
+.pcard-body { font-size: 14px; color: var(--ink2); line-height: 1.8; margin-bottom: 1.25rem; }
+.pcard-body strong { color: var(--ink); font-weight: 600; }
+
+/* Tools section */
+.pcard-tools {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem; margin-bottom: 1rem;
+}
+.tools-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: .5rem;
+  display: block;
+}
+.tools-list { display: flex; flex-direction: column; gap: .35rem; }
+.tool-item {
+  font-size: 12.5px; color: var(--ink2); display: flex; gap: .5rem;
+  align-items: flex-start; line-height: 1.5;
+}
+.tool-item::before { content: "→"; color: var(--muted); flex-shrink: 0; margin-top: .05rem; }
+
+.results { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.res { font-size: 12px; font-weight: 600; padding: .25rem .7rem; border-radius: 5px; }
+.res-green  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-border); }
+.res-amber  { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-border); }
+.res-blue   { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-border); }
+.res-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+.res-gray   { background: var(--gray-bg);   color: var(--gray);   border: 1px solid var(--gray-border); }
+
+.techs { display: flex; flex-wrap: wrap; gap: .3rem; }
+.tech {
+  font-size: 11.5px; color: var(--muted); background: var(--bg);
+  border: 1px solid var(--border); padding: .2rem .55rem; border-radius: 5px;
+}
+
+/* ── SKILLS ── */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .875rem; }
+.skill-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.25rem 1.4rem;
+  transition: border-color .2s;
+}
+.skill-card:hover { border-color: #ccc; }
+.skill-card-icon {
+  width: 34px; height: 34px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; margin-bottom: .75rem;
+}
+.icon-blue   { background: var(--blue-bg);   }
+.icon-green  { background: var(--green-bg);  }
+.icon-purple { background: var(--purple-bg); }
+.icon-amber  { background: var(--amber-bg);  }
+.icon-gray   { background: var(--gray-bg);   }
+.skill-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: -.01em;
+  color: var(--ink); margin-bottom: .5rem;
+}
+.skill-card p { font-size: 13px; color: var(--ink2); line-height: 1.7; }
+.skill-card p span {
+  display: inline-block; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 4px; padding: .1rem .45rem; font-size: 11.5px; margin: .1rem .1rem;
+  color: var(--muted);
+}
+
+/* ── ABOUT STRIP ── */
+.about-strip {
+  background: var(--white); border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.about-inner {
+  max-width: 900px; margin: 0 auto;
+  padding: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+}
+.about-block h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: .75rem; letter-spacing: -.01em;
+}
+.about-block p {
+  font-size: 13.5px; color: var(--ink2); line-height: 1.8;
+}
+.edu-item { display: flex; flex-direction: column; gap: .15rem; margin-bottom: .75rem; }
+.edu-deg { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.edu-school { font-size: 13px; color: var(--accent); }
+.edu-year { font-size: 12px; color: var(--muted); }
+.lang-row { display: flex; gap: .5rem; align-items: center; margin-bottom: .4rem; }
+.lang-name { font-size: 13.5px; font-weight: 500; color: var(--ink); width: 80px; }
+.lang-bar { flex: 1; height: 4px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.lang-fill { height: 100%; border-radius: 99px; }
+.lang-fill.full    { width: 100%; background: var(--accent); }
+.lang-fill.high    { width: 90%;  background: var(--accent); }
+.lang-fill.mid     { width: 65%;  background: var(--accent2); }
+.lang-level { font-size: 12px; color: var(--muted); width: 70px; text-align: right; }
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--ink);
+  padding: 3rem;
+  max-width: 100%;
+}
+.footer-inner {
+  max-width: 900px; margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1rem; text-align: center;
+}
+.footer-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.25rem; font-weight: 700; color: #fff;
+}
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 13.5px; color: rgba(255,255,255,.6); text-decoration: none; transition: color .15s; }
+.footer-links a:hover { color: #fff; }
+.footer-note { font-size: 12px; color: rgba(255,255,255,.3); margin-top: .5rem; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 720px) {
+  nav { padding: 0 1.25rem; }
+  .nav-links { gap: 1rem; }
+  .hero, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .stats-bar { grid-template-columns: repeat(3, 1fr); padding: 1.5rem; }
+  .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); padding: .75rem; }
+  .stat:nth-child(n+4) { border-bottom: none; }
+  .pcard-inner { padding: 1.25rem; }
+  .about-inner { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem; }
+  .footer { padding: 2rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Imad BELFAR</span>
+  <div class="nav-links">
+    <a href="#projets">Projets</a>
+    <a href="#competences">Compétences</a>
+    <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank" class="nav-cta">LinkedIn ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrapper">
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-pill">Master 2 · Paris-Saclay · Ingénierie des Systèmes Complexes</span>
+      <span class="eyebrow-avail">
+        <span class="avail-dot"></span>
+        Disponible septembre 2026
+      </span>
+    </div>
+
+    <h1 class="hero-name">Imad BELFAR</h1>
+    <p class="hero-title">Ingénieur Industriel & <span>Qualité</span></p>
+
+    <p class="hero-intro">
+      Pendant 2 ans en alternance chez <strong>LIEM / Castles Technology</strong> — fabricant mondial de terminaux de paiement (ces petits boîtiers sur lesquels vous tapez votre code CB en magasin) —
+      j'ai résolu des problèmes opérationnels concrets : flux de production bloqués, systèmes informatiques inexistants, processus manuels chronophages.
+      Du diagnostic terrain à la mise en production d'applications, souvent <strong>en autonomie complète</strong> et sous forte contrainte de délai.
+      Clients accompagnés : <strong>BNP Paribas, BPCE (Caisses d'Épargne / Banques Populaires), myPOS, PennyLane, AVEM.</strong>
+    </p>
+
+    <div class="hero-context">
+      <div class="ctx-item">
+        <span class="ctx-label">Entreprise d'accueil</span>
+        <span class="ctx-val">Castles Technology / LIEM</span>
+      </div>
+      <div class="ctx-item">
+        <span class="ctx-label">Secteur</span>
+        <span class="ctx-val">Industrie · Fintech · Paiement électronique</span>
+      </div>
+      <div class="ctx-item">
+        <span class="ctx-label">Durée</span>
+        <span class="ctx-val">2 ans d'alternance (2024–2026)</span>
+      </div>
+      <div class="ctx-item">
+        <span class="ctx-label">Formation</span>
+        <span class="ctx-val">Université Paris-Saclay</span>
+      </div>
+    </div>
+
+    <div class="hero-chips">
+      <span class="chip">Process Engineering</span>
+      <span class="chip">Lean / Théorie des Contraintes</span>
+      <span class="chip">Low-Code / AppSheet</span>
+      <span class="chip">Python · Excel VBA</span>
+      <span class="chip">ERP · BPMN</span>
+      <span class="chip">Android / Kotlin</span>
+      <span class="chip">Gestion de projet client</span>
+      <span class="chip">React</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#projets" class="btn-primary">Voir les projets →</a>
+      <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+      <a href="mailto:imad.belfar@email.com" class="btn-ghost">✉ Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-wrapper">
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-val">9</span>
+      <span class="stat-lbl">projets livrés</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">5</span>
+      <span class="stat-lbl">clients grands comptes</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">5</span>
+      <span class="stat-lbl">pays déployés</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">−33%</span>
+      <span class="stat-lbl">délai simulé en production</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">97,5%</span>
+      <span class="stat-lbl">précision OCR mobile</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">≈0%</span>
+      <span class="stat-lbl">écart stock (était 35%)</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projets">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>Projets réalisés</h2>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="projects">
+
+    <!-- 01 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-gray"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 01 · Audit opérationnel & simulation</span>
+            <span class="badge badge-intern">Castles Technology — Mission interne</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">Diagnostic du site de réparation de Vallery — la contrainte n'était pas là où tout le monde croyait</h3>
+        <p class="pcard-hook">"Le vrai goulot d'étranglement était invisible aux yeux du management."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          <strong>Castles Technology répare des terminaux de paiement</strong> (les terminaux CB qu'on trouve chez les commerçants) sur son site de Vallery. Le site accumulait du retard, les délais contractuels (SLA) n'étaient plus tenus, et personne ne comprenait pourquoi. La direction EMEA a commandé un <strong>diagnostic d'urgence</strong>. Mission de 2 semaines, commandée directement par le Directeur des Opérations EMEA.
+        </div>
+
+        <p class="pcard-body">
+          J'ai analysé l'ensemble des données de production, conduit des interviews terrain, et surtout <strong>suivi physiquement un lot de 40 terminaux</strong> poste par poste pour mesurer les temps réels (pas les temps théoriques). J'ai ensuite modélisé statistiquement ces données et construit des <strong>simulations d'ordonnancement</strong> (en Python) pour tester différents scénarios de réallocation de ressources.
+          <br><br>
+          Le verdict était contre-intuitif : tout le monde pointait l'atelier de réparation comme cause du retard. En réalité, le <strong>goulot d'étranglement était la station d'injection de clés et de mise à jour logicielle</strong> — une étape technique obligatoire mais sous-dotée en capacité. Réallouer des ressources à cet endroit précis permettait de simuler une réduction de délai de 33%.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>Théorie des Contraintes (TOC)</strong> — cadre d'analyse pour identifier le maillon limitant d'un système de production, popularisé par le livre "Le But"</div>
+            <div class="tool-item"><strong>Lean Manufacturing</strong> — méthode d'optimisation industrielle visant à éliminer les gaspillages</div>
+            <div class="tool-item"><strong>Python (pandas, scipy, matplotlib)</strong> — pour l'analyse statistique des données de temps de cycle et la construction des simulations</div>
+            <div class="tool-item"><strong>Simulation d'ordonnancement</strong> — modélisation informatique du flux de production pour tester des scénarios "et si" sans toucher à la ligne réelle</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">−33% de délai simulé</span>
+          <span class="res res-amber">Réallocation capacité actionnée</span>
+          <span class="res res-blue">Présenté au EMEA Ops Director</span>
+        </div>
+        <div class="techs">
+          <span class="tech">Python</span><span class="tech">Statistiques</span><span class="tech">Simulation</span><span class="tech">Théorie des Contraintes</span><span class="tech">Lean</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-green"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 02 · Système d'information & logistique</span>
+            <span class="badge badge-mypos">myPOS — Fintech européenne, +500 000 clients commerçants</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">Système de gestion des commandes déployé dans 5 pays en 2 semaines</h3>
+        <p class="pcard-hook">"Aucun outil prêt des deux côtés. Go-live dans 14 jours."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          <strong>myPOS est une fintech</strong> (entreprise de technologie financière) qui fournit des solutions de paiement aux commerçants en Europe. En tant que nouveau client de Castles Technology, myPOS devait lancer sa logistique de distribution de terminaux en France — sans avoir de système opérationnel en place côté client, et sans que Castles n'ait prévu d'outil dédié. <strong>Délai : 14 jours avant le premier vrai envoi de commandes.</strong>
+        </div>
+
+        <p class="pcard-body">
+          J'ai évalué les options disponibles (développement custom, ERP existant, no-code), et choisi <strong>AppSheet</strong> — une plateforme low-code de Google permettant de créer des applications métier sans écrire beaucoup de code — pour sa rapidité de déploiement et sa flexibilité.
+          <br><br>
+          En deux semaines, j'ai conçu le <strong>modèle de données complet</strong>, un workflow de validation en 6 étapes (saisie commande → validation → préparation → expédition → livraison → facturation), des droits d'accès par rôle (opérateur, responsable, admin), la <strong>validation automatique des adresses</strong> via l'API Google Maps, la génération automatique des bons de préparation, et la gestion des spécificités DOM-TOM (Guadeloupe, Martinique, etc.).
+          L'application a été déployée progressivement dans 5 pays avec environ 20 utilisateurs.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>AppSheet (Google)</strong> — plateforme low-code permettant de créer des applications métier connectées à des bases de données, sans développement lourd</div>
+            <div class="tool-item"><strong>Google Cloud / Google Sheets</strong> — backend de données hébergé dans l'écosystème Google, accessible en temps réel</div>
+            <div class="tool-item"><strong>API Chronopost</strong> — intégration directe avec le transporteur pour générer les étiquettes d'expédition automatiquement</div>
+            <div class="tool-item"><strong>API Google Maps</strong> — validation des adresses de livraison à la saisie pour éviter les erreurs d'acheminement</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">Go-live J1 dans les délais</span>
+          <span class="res res-amber">5 pays · ~20 utilisateurs</span>
+          <span class="res res-blue">Traçabilité S/N fiabilisée</span>
+        </div>
+        <div class="techs">
+          <span class="tech">AppSheet</span><span class="tech">Google Cloud</span><span class="tech">Chronopost API</span><span class="tech">Google Maps API</span><span class="tech">Low-Code</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-blue"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 03 · Projet grand compte · Chef de projet</span>
+            <span class="badge badge-bnp">BNP Paribas — 1ère banque française, ~200 000 collaborateurs</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">CaSERV — Plateforme de service intégrée pour la gestion de 60 000 terminaux marchands</h3>
+        <p class="pcard-hook">"Construire from scratch en 7 mois ce qui prend normalement 18."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          <strong>BNP Paribas Services Monétiques</strong> est la division de BNP qui gère les équipements de paiement (terminaux CB) de ses clients commerçants. Elle a confié à Castles Technology la gestion opérationnelle de son parc de <strong>60 000+ terminaux</strong> en France : réparations, remplacements, hotline, logistique. C'est un contrat majeur qui nécessitait de construire une plateforme de service complète — CaSERV — en intégrant une demi-douzaine de logiciels différents. Délai : 7 mois.
+        </div>
+
+        <p class="pcard-body">
+          En rôle de <strong>chef de projet local</strong>, en appui du transition manager senior et en collaboration avec l'IT Leader basé au Royaume-Uni, j'ai coordonné l'ensemble des chantiers techniques et fonctionnels.
+          <br><br>
+          J'ai formalisé <strong>12 processus principaux en BPMN</strong> (langage de modélisation des processus métier, comme des organigrammes standardisés) couvrant tous les scénarios de service de bout en bout. J'ai participé à l'intégration de 6 systèmes : <strong>Matrix42</strong> (gestion des interventions et tickets), <strong>CasHub</strong> (portail client interne Castles), <strong>Chronopost</strong> (transport), <strong>Lemon Group</strong> (gestion des pièces détachées), <strong>Bright Pattern</strong> (centre d'appels), et <strong>NetSuite</strong> (ERP / facturation). J'ai également piloté les cycles UAT (tests de recette avec les utilisateurs finaux BNP) et configuré le centre d'appels 8 agents.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>BPMN (Business Process Model & Notation)</strong> — standard international pour modéliser graphiquement les processus d'entreprise, comme un plan d'architecte pour les flux de travail</div>
+            <div class="tool-item"><strong>Matrix42</strong> — logiciel de gestion des actifs IT et des tickets de support (type "ServiceNow" pour le marché européen)</div>
+            <div class="tool-item"><strong>Bright Pattern</strong> — plateforme cloud de centre d'appels (omnicanal : téléphone, email, chat)</div>
+            <div class="tool-item"><strong>UAT (User Acceptance Testing)</strong> — phase de tests où les vrais utilisateurs valident que le système correspond à leurs besoins avant le go-live</div>
+            <div class="tool-item"><strong>NetSuite</strong> — ERP cloud d'Oracle utilisé pour la facturation et la gestion financière</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">Go-live mai 2026</span>
+          <span class="res res-amber">12 processus BPMN livrés</span>
+          <span class="res res-blue">6 systèmes intégrés</span>
+          <span class="res res-purple">60 000+ terminaux gérés</span>
+        </div>
+        <div class="techs">
+          <span class="tech">Matrix42</span><span class="tech">BPMN / Draw.io</span><span class="tech">Bright Pattern</span><span class="tech">NetSuite</span><span class="tech">UAT</span><span class="tech">Intégration API</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-blue"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 04 · Mission terrain internationale</span>
+            <span class="badge badge-bnp">iNETcc — Centre d'appels partenaire BNP Paribas (Bucarest, Roumanie)</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">Audit sur site en Roumanie — Validation opérationnelle & transfert de bonnes pratiques</h3>
+        <p class="pcard-hook">"On est venu vérifier. On est reparti avec 5 améliorations actionnées dès le lendemain."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          Dans le cadre du projet CaSERV (BNP Paribas), la hotline client serait opérée par <strong>iNETcc</strong>, un prestataire spécialisé dans les centres d'appels basé en Roumanie. Avant le go-live, il fallait s'assurer que leurs agents maîtrisaient nos outils, et que leur organisation était compatible avec nos exigences de service. Mission de <strong>4 jours à Bucarest.</strong>
+        </div>
+
+        <p class="pcard-body">
+          Sur place, j'ai validé l'intégration de <strong>Matrix42</strong> (gestion des tickets) et <strong>Bright Pattern</strong> (système téléphonique) dans leur environnement, testé les scénarios en conditions réelles avec les agents, et vérifié leur niveau de préparation sur les processus BNP Paribas que j'avais formalisés.
+          <br><br>
+          En parallèle, j'ai documenté leur organisation interne : <strong>dashboards de supervision en temps réel, protocoles de coaching, gestion des files d'attente et des pauses.</strong> J'ai identifié 5 points d'amélioration quick wins — des ajustements rapides à fort impact — que j'ai formalisés dans un mémo livré au management iNETcc et appliqués dès le démarrage du support BNP.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>Audit de processus</strong> — observation et évaluation structurée des pratiques réelles sur le terrain</div>
+            <div class="tool-item"><strong>Conduite du changement</strong> — accompagnement des équipes dans l'adoption de nouveaux outils et méthodes</div>
+            <div class="tool-item"><strong>Bright Pattern</strong> — configuration et tests de la plateforme de centre d'appels</div>
+            <div class="tool-item"><strong>Matrix42</strong> — validation de l'intégration et formation des agents à la gestion des tickets</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">5 améliorations actionnées immédiatement</span>
+          <span class="res res-amber">Mémo livré au management</span>
+          <span class="res res-blue">Agents validés opérationnels</span>
+        </div>
+        <div class="techs">
+          <span class="tech">Audit process</span><span class="tech">Conduite du changement</span><span class="tech">Bright Pattern</span><span class="tech">Matrix42</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-purple"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 05 · Application métier full-stack</span>
+            <span class="badge badge-bpce">BPCE (2ème groupe bancaire français) + PennyLane (logiciel comptable)</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">442Plan — Application web de pilotage opérationnel d'équipe en temps réel</h3>
+        <p class="pcard-hook">"Du chaos Excel à une source de vérité unique, accessible depuis n'importe quel écran."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          Pour gérer les 7 techniciens de terrain intervenant chez <strong>BPCE</strong> (réseau Banque Populaire / Caisse d'Épargne) et <strong>PennyLane</strong> (éditeur de logiciel comptable), le management utilisait des outils bricolés : planning sur Excel, pointage sur feuilles papier, calcul des primes à la main. Résultat : pertes de temps, erreurs, litiges avec les techniciens sur leurs rémunérations variables.
+        </div>
+
+        <p class="pcard-body">
+          J'ai conçu et développé <strong>442Plan</strong>, une application web complète avec :
+          <br><br>
+          — Un <strong>dashboard temps réel</strong> affichant la présence des techniciens, leurs interventions du jour et leurs compteurs de production<br>
+          — Un système de <strong>pointage digital</strong> (arrivée / départ / pause) remplaçant les feuilles papier<br>
+          — Un <strong>suivi RH</strong> : congés, absences, contrats<br>
+          — Un <strong>compteur de production</strong> par demi-journée pour chaque technicien<br>
+          — Un module de <strong>calcul automatique des primes</strong> basé sur les règles contractuelles définies par le management<br><br>
+          L'application est déployée et utilisée quotidiennement par l'équipe d'encadrement.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>React</strong> — bibliothèque JavaScript de Meta pour construire des interfaces web interactives</div>
+            <div class="tool-item"><strong>Tailwind CSS</strong> — framework CSS utilitaire permettant de styliser rapidement une interface</div>
+            <div class="tool-item"><strong>Base44 (BaaS)</strong> — plateforme Backend-as-a-Service gérant l'hébergement, la base de données et l'authentification, pour éviter de gérer une infrastructure serveur</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">−3h/semaine de reporting</span>
+          <span class="res res-amber">Litiges primes éliminés</span>
+          <span class="res res-blue">En production quotidienne</span>
+        </div>
+        <div class="techs">
+          <span class="tech">React</span><span class="tech">Tailwind CSS</span><span class="tech">Base44 (BaaS)</span><span class="tech">Dashboard temps réel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-gray"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 06 · Transformation SI & ERP</span>
+            <span class="badge badge-intern">Castles Technology — Mission interne</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">ERPNext — Proof of Concept pour remplacer le logiciel de gestion legacy OGI</h3>
+        <p class="pcard-hook">"Comment faire rentrer la réparation de terminaux dans un ERP conçu pour la fabrication ?"</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          Un <strong>ERP (Enterprise Resource Planning)</strong> est le logiciel central d'une entreprise qui gère les stocks, les commandes, la facturation, les ressources humaines, etc. Le logiciel legacy <strong>OGI</strong> utilisé par Castles Technology était obsolète et bloquait la croissance. La direction IT a lancé un projet de remplacement. Problème : les ERP du marché sont conçus pour la fabrication (on sait quelles pièces entrent dans un produit avant de le fabriquer). Or, dans la <strong>réparation</strong> de terminaux, on ne sait quelles pièces remplacer qu'<em>après</em> avoir diagnostiqué l'appareil.
+        </div>
+
+        <p class="pcard-body">
+          J'ai réalisé un <strong>benchmark de 4 ERP</strong> (ERPNext, Odoo, Sage, solution propriétaire) selon des critères techniques et fonctionnels, avec recommandation documentée. ERPNext (solution open-source) a été sélectionné.
+          <br><br>
+          Le défi principal : les <strong>BOMs (Bill of Materials, listes de composants)</strong> classiques exigent de déclarer les pièces nécessaires <em>avant</em> de commencer. J'ai trouvé la solution technique : un <strong>"Phantom BOM"</strong> (article fantôme) — une fonctionnalité d'ERPNext permettant de créer des ordres de fabrication/réparation sans composants prédéfinis, avec saisie des pièces effectivement consommées en fin d'intervention. J'ai déployé ERPNext en local via <strong>Docker</strong> pour le PoC, configuré le module RMA (Return Merchandise Authorization — gestion des retours produits), et livré une recommandation go/no-go au comité IT.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>ERPNext</strong> — ERP open-source basé sur le framework Frappe, particulièrement utilisé par les PME industrielles</div>
+            <div class="tool-item"><strong>Docker</strong> — outil de conteneurisation permettant de déployer un environnement logiciel complet sur n'importe quelle machine</div>
+            <div class="tool-item"><strong>Phantom BOM</strong> — technique de gestion industrielle permettant de créer des ordres sans nomenclature prédéfinie</div>
+            <div class="tool-item"><strong>RMA (Return Merchandise Authorization)</strong> — processus standardisé de gestion des retours et réparations produits</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">PoC validé</span>
+          <span class="res res-amber">Recommandation go/no-go livrée au comité IT</span>
+        </div>
+        <div class="techs">
+          <span class="tech">ERPNext</span><span class="tech">Docker</span><span class="tech">Phantom BOM</span><span class="tech">RMA</span><span class="tech">Benchmark ERP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-amber"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 07 · Qualité & gestion des stocks</span>
+            <span class="badge badge-avem">AVEM — Distributeur d'équipements de paiement</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">Outil de suivi des pièces détachées — 35% d'écart de stock ramené à quasi zéro</h3>
+        <p class="pcard-hook">"La cause n'était pas un manque de rigueur des équipes — c'était l'absence d'outil de traçabilité."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          <strong>AVEM distribue et maintient des équipements de paiement</strong>. Leur problème : un écart de <strong>35%</strong> entre le stock physique (ce qui est réellement en entrepôt) et le stock numérique (ce que dit leur système informatique). Concrètement, cela signifie que 35% des pièces détachées ne sont pas comptabilisées — ce qui génère des ruptures imprévues, des commandes inutiles, et des litiges avec les clients.
+        </div>
+
+        <p class="pcard-body">
+          J'ai appliqué la méthode des <strong>5 Pourquoi</strong> — une technique d'analyse de cause racine : on remonte la chaîne causale en posant "pourquoi ?" à chaque étape jusqu'à trouver la vraie cause. Diagnostic : aucune traçabilité fine des consommations de pièces lors des interventions. Les techniciens prélevaient des pièces sans enregistrement systématique.
+          <br><br>
+          Solution développée : un <strong>formulaire Excel/VBA avec scan de codes-barres</strong>. À chaque mouvement de stock (entrée ou sortie de pièce), le technicien scanne le code-barres de la pièce — ce qui génère automatiquement un <strong>identifiant unique de mouvement, horodaté, avec le nom de l'opérateur</strong> (piste d'audit complète). Le système déclenche automatiquement des <strong>alertes de réapprovisionnement</strong> quand le stock d'une référence passe sous un seuil minimum.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>Excel / VBA (Visual Basic for Applications)</strong> — langage de programmation intégré à Excel permettant de créer des formulaires et d'automatiser des tâches</div>
+            <div class="tool-item"><strong>Scan code-barres</strong> — lecture automatique des références produits pour éliminer les erreurs de saisie manuelle</div>
+            <div class="tool-item"><strong>Méthode des 5 Pourquoi</strong> — technique d'analyse de cause racine issue du Lean Manufacturing, développée par Toyota</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">35% → ~0% d'écart de stock</span>
+          <span class="res res-amber">Alertes réapprovisionnement automatiques</span>
+          <span class="res res-blue">Piste d'audit complète</span>
+        </div>
+        <div class="techs">
+          <span class="tech">Excel / VBA</span><span class="tech">Scan code-barres</span><span class="tech">5 Pourquoi</span><span class="tech">Lean</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-gray"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 08 · Application mobile Android</span>
+            <span class="badge badge-intern">Castles Technology — Mission interne, enjeu qualité critique</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">ICCHI — Application Android de contrôle qualité par OCR, 100% hors-ligne</h3>
+        <p class="pcard-hook">"Les données financières ne quittent jamais l'appareil — contrainte non négociable dans le paiement."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          En 2024, des <strong>inversions de terminaux</strong> surviennent lors des reconditionnements : un terminal destiné à un client A est expédié au client B. Dans le domaine du paiement électronique, c'est un incident grave — les terminaux contiennent des configurations financières sensibles. Chaque erreur entraîne un <strong>reconditionnement coûteux</strong> (retour, effacement, reconfiguration, réexpédition) et une rupture de confiance client. Contrainte absolue : impossible d'envoyer ces données sur internet pour les vérifier dans le cloud.
+        </div>
+
+        <p class="pcard-body">
+          J'ai développé une <strong>application Android native en Kotlin</strong> (le langage officiel pour Android) qui fonctionne intégralement en mode hors-ligne. L'application :
+          <br><br>
+          1. Extrait les données du <strong>PDF de mission</strong> (bon de commande client) via PdfRenderer<br>
+          2. Lit les <strong>photos du ticket imprimé</strong> par le terminal via ML Kit OCR (reconnaissance optique de caractères de Google, tournant localement sur l'appareil)<br>
+          3. <strong>Recoupe les deux sources</strong> via un dictionnaire de synonymes (un numéro peut s'écrire de plusieurs façons selon le modèle)<br>
+          4. Affiche instantanément une validation ✓ ou une alerte ✗ à l'opérateur<br><br>
+          Zéro donnée ne quitte l'appareil. Zéro réseau requis.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>Kotlin</strong> — langage de programmation moderne pour Android, recommandé par Google depuis 2017</div>
+            <div class="tool-item"><strong>ML Kit OCR (Google)</strong> — bibliothèque d'intelligence artificielle embarquée permettant de lire du texte dans des images, sans réseau</div>
+            <div class="tool-item"><strong>PdfRenderer (Android SDK)</strong> — API native Android pour afficher et extraire le contenu de fichiers PDF</div>
+            <div class="tool-item"><strong>Architecture offline-first</strong> — conception où l'application fonctionne entièrement sans connexion internet, en stockant et traitant tout localement</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">97,5% de précision (39/40 terminaux)</span>
+          <span class="res res-amber">100% hors-ligne</span>
+          <span class="res res-blue">Stress opérateur éliminé</span>
+        </div>
+        <div class="techs">
+          <span class="tech">Kotlin</span><span class="tech">ML Kit OCR</span><span class="tech">PdfRenderer</span><span class="tech">Android</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-gray"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num">Projet 09 · Optimisation & modélisation de processus</span>
+            <span class="badge badge-intern">Castles Technology — Mission interne</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">Refonte du processus RMA — Modélisation BPMN & spécification pour l'ERP futur</h3>
+        <p class="pcard-hook">"25 minutes de saisie pour 4 réparations simples. Le vrai problème était dans la conception du flux."</p>
+
+        <div class="pcard-context">
+          <span class="pcard-context-label">Contexte & enjeu</span>
+          Le <strong>processus RMA (Return Merchandise Authorization)</strong> est la procédure standard pour gérer les retours de produits défectueux : réception, diagnostic, réparation ou échange, renvoi au client. Chez Castles, ce processus prenait beaucoup trop de temps et comportait de nombreuses étapes manuelles redondantes. De plus, sa modélisation précise était nécessaire pour servir de <strong>spécification fonctionnelle au futur module RMA d'ERPNext</strong>.
+        </div>
+
+        <p class="pcard-body">
+          J'ai d'abord cartographié le <strong>flux terrain réel</strong> (pas le théorique, qui divergeait souvent) en observant les opérations et en interview sur les cas dérogatoires. Résultat : le modèle officiel ne prenait pas en compte un <strong>bypass niveau 0</strong> (pour les échanges standards simples, pas besoin de passer par toutes les étapes) ni les <strong>boucles de rétroaction</strong> quand un défaut est découvert en cours de nettoyage ou lors des tests finaux.
+          <br><br>
+          J'ai modélisé le processus complet en <strong>BPMN</strong> avec tous les chemins alternatifs, décisions et exceptions. Ce modèle est devenu la <strong>spécification fonctionnelle officielle</strong> du module RMA pour ERPNext, transmise à l'équipe IT pour le développement.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item"><strong>BPMN 2.0</strong> — standard ISO pour modéliser graphiquement les processus métier : chaque étape, décision, rôle et exception est représenté avec un symbole normalisé</div>
+            <div class="tool-item"><strong>Draw.io</strong> — outil de diagrammes en ligne gratuit, particulièrement utilisé pour les diagrammes BPMN et les schémas d'architecture</div>
+            <div class="tool-item"><strong>ProcessMaker</strong> — plateforme BPM (Business Process Management) permettant d'automatiser des workflows à partir de modèles BPMN</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-green">Spec RMA livrée pour ERPNext</span>
+          <span class="res res-amber">Flux terrain documenté</span>
+          <span class="res res-blue">Bypass niveau 0 intégré</span>
+        </div>
+        <div class="techs">
+          <span class="tech">BPMN 2.0</span><span class="tech">Draw.io</span><span class="tech">ProcessMaker</span><span class="tech">RMA</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT / EDU -->
+<div class="about-strip">
+  <div class="about-inner">
+    <div class="about-block">
+      <h3>Formation</h3>
+      <div class="edu-item">
+        <span class="edu-deg">Master 2 — Ingénierie des Systèmes Complexes</span>
+        <span class="edu-school">Université Paris-Saclay</span>
+        <span class="edu-year">2024 – 2026 · Diplômé juin 2026</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-deg">Licence & Master 1 — Génie Industriel</span>
+        <span class="edu-school">Université Paris-Saclay</span>
+        <span class="edu-year">2021 – 2024</span>
+      </div>
+    </div>
+    <div class="about-block">
+      <h3>Langues</h3>
+      <div class="lang-row">
+        <span class="lang-name">Français</span>
+        <div class="lang-bar"><div class="lang-fill full"></div></div>
+        <span class="lang-level">Natif</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Anglais</span>
+        <div class="lang-bar"><div class="lang-fill high"></div></div>
+        <span class="lang-level">Professionnel</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Arabe</span>
+        <div class="lang-bar"><div class="lang-fill mid"></div></div>
+        <span class="lang-level">Courant</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section" id="competences">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>Compétences</h2>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-icon icon-blue">⚙️</div>
+      <h4>Process Engineering</h4>
+      <p>
+        <span>BPMN</span> <span>VSM</span> <span>Lean</span> <span>Théorie des Contraintes</span>
+        <span>5 Pourquoi</span> <span>RMA</span> <span>Draw.io</span> <span>ProcessMaker</span>
+      </p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon icon-green">📊</div>
+      <h4>Données & Simulation</h4>
+      <p>
+        <span>Python</span> <span>pandas</span> <span>scipy</span> <span>matplotlib</span>
+        <span>Excel / VBA</span> <span>Power Query</span> <span>Power BI</span> <span>Flexsim</span>
+      </p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon icon-purple">💻</div>
+      <h4>Digital & Low-Code</h4>
+      <p>
+        <span>AppSheet</span> <span>Google Apps Script</span> <span>Base44</span>
+        <span>React</span> <span>Tailwind CSS</span> <span>ProcessMaker</span>
+      </p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon icon-amber">🗄️</div>
+      <h4>ERP & Systèmes d'information</h4>
+      <p>
+        <span>ERPNext</span> <span>Matrix42</span> <span>Odoo</span>
+        <span>NetSuite</span> <span>Bright Pattern</span> <span>Docker</span>
+      </p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon icon-blue">📱</div>
+      <h4>Développement mobile</h4>
+      <p>
+        <span>Android</span> <span>Kotlin</span> <span>ML Kit OCR</span>
+        <span>PdfRenderer</span> <span>Offline-first</span>
+      </p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon icon-green">🤝</div>
+      <h4>Gestion de projet</h4>
+      <p>
+        <span>Coordination transverse</span> <span>Ateliers clients</span>
+        <span>UAT</span> <span>Conduite du changement</span> <span>Grand compte</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <span class="footer-name">Imad BELFAR</span>
+    <div class="footer-links">
+      <a href="mailto:imad.belfar@email.com">imad.belfar@email.com</a>
+      <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank">LinkedIn ↗</a>
+    </div>
+    <p class="footer-note">Disponible à partir de septembre 2026 · Paris & remote · Chaque projet ici a résolu un problème réel.</p>
+  </div>
+</div>
+
+</body>
+</html>
