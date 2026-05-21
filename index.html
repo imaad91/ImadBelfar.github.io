@@ -82,6 +82,31 @@ nav {
 }
 .nav-cta:hover { background: #0f2a50 !important; }
 
+.lang-selector {
+  display: flex; gap: 0.5rem; align-items: center;
+  margin-left: 1rem;
+}
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--ink2);
+  transition: all 0.2s;
+}
+.lang-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.lang-btn:hover:not(.active) {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
 /* ── HERO ── */
 .hero-wrapper {
   background: var(--white);
@@ -250,6 +275,7 @@ nav {
 .stripe-purple { background: #4a1d8a; }
 .stripe-amber  { background: #b85a00; }
 .stripe-gray   { background: #6a6a62; }
+.stripe-mgt    { background: #c8400a; }
 
 .pcard-inner { padding: 1.75rem 2rem; }
 
@@ -272,6 +298,7 @@ nav {
 .badge-bpce   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
 .badge-avem   { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-border); }
 .badge-intern { background: var(--gray-bg);   color: var(--gray);   border: 1px solid var(--gray-border); }
+.badge-mgt    { background: #fdf0eb; color: #c8400a; border: 1px solid #f5d49a; }
 
 .pcard-title {
   font-family: 'Syne', sans-serif;
@@ -325,6 +352,7 @@ nav {
 .res-blue   { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-border); }
 .res-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
 .res-gray   { background: var(--gray-bg);   color: var(--gray);   border: 1px solid var(--gray-border); }
+.res-mgt    { background: #fdf0eb; color: #c8400a; border: 1px solid #f5d49a; }
 
 .techs { display: flex; flex-wrap: wrap; gap: .3rem; }
 .tech {
@@ -438,9 +466,12 @@ nav {
 <nav>
   <span class="nav-logo">Imad BELFAR</span>
   <div class="nav-links">
-    <a href="#projets">Projets</a>
-    <a href="#competences">Compétences</a>
-    <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank" class="nav-cta">LinkedIn ↗</a>
+    <a href="#projets" data-i18n="nav.projects">Projets</a>
+    <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank" class="nav-cta" data-i18n="nav.linkedin">LinkedIn ↗</a>
+    <div class="lang-selector">
+      <button class="lang-btn active" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
   </div>
 </nav>
 
@@ -448,128 +479,158 @@ nav {
 <div class="hero-wrapper">
   <div class="hero">
     <div class="hero-eyebrow">
-      <span class="eyebrow-pill">Master 2 · Paris-Saclay · Ingénierie des Systèmes Complexes</span>
+      <span class="eyebrow-pill" data-i18n="hero.eyebrow1">Master 2 · Paris-Saclay · Ingénierie des Systèmes Complexes</span>
       <span class="eyebrow-avail">
         <span class="avail-dot"></span>
-        Disponible septembre 2026
+        <span data-i18n="hero.avail1">Disponible septembre 2026</span>
+      </span>
+      <span class="eyebrow-avail">
+        <span class="avail-dot"></span>
+        <span data-i18n="hero.avail2">France et international (remote possible)</span>
       </span>
     </div>
 
     <h1 class="hero-name">Imad BELFAR</h1>
-    <p class="hero-title">Ingénieur Industriel & <span>Qualité</span></p>
+    <p class="hero-title" data-i18n="hero.title">Ingénieur Industriel & <span>Qualité</span></p>
 
-    <p class="hero-intro">
-      Pendant 2 ans en alternance chez <strong>LIEM / Castles Technology</strong> — fabricant mondial de terminaux de paiement (ces petits boîtiers sur lesquels vous tapez votre code CB en magasin) —
-      j'ai résolu des problèmes opérationnels concrets : flux de production bloqués, systèmes informatiques inexistants, processus manuels chronophages.
-      Du diagnostic terrain à la mise en production d'applications, souvent <strong>en autonomie complète</strong> et sous forte contrainte de délai.
-      Clients accompagnés : <strong>BNP Paribas, BPCE (Caisses d'Épargne / Banques Populaires), myPOS, PennyLane, AVEM.</strong>
-    </p>
+    <p class="hero-intro" data-i18n="hero.intro">
+  Pendant 2 ans en alternance chez <strong>LIEM / Castles Technology</strong> — acteur mondial du <strong>B2B</strong> concevant les terminaux de paiement pour de grands comptes, tout en garantissant la continuité de service des marchands sur le terrain —
+  j'ai résolu des problèmes opérationnels concrets et activement <strong>accompagné la transformation IT de l'entreprise</strong> : flux de production bloqués, briques logicielles manquantes, processus manuels chronophages.
+  Du diagnostic terrain à la mise en production d'applications opérationnelles, j'ai piloté ces projets souvent <strong>en autonomie complète</strong> et sous forte contrainte de délai.
+</p>
 
     <div class="hero-context">
       <div class="ctx-item">
-        <span class="ctx-label">Entreprise d'accueil</span>
-        <span class="ctx-val">Castles Technology / LIEM</span>
+        <span class="ctx-label" data-i18n="hero.ctx1.label">Entreprise d'accueil</span>
+        <span class="ctx-val" data-i18n="hero.ctx1.val">Castles Technology / LIEM</span>
       </div>
       <div class="ctx-item">
-        <span class="ctx-label">Secteur</span>
-        <span class="ctx-val">Industrie · Fintech · Paiement électronique</span>
+        <span class="ctx-label" data-i18n="hero.ctx2.label">Secteur</span>
+        <span class="ctx-val" data-i18n="hero.ctx2.val">Industrie · Fintech · Paiement électronique</span>
       </div>
       <div class="ctx-item">
-        <span class="ctx-label">Durée</span>
-        <span class="ctx-val">2 ans d'alternance (2024–2026)</span>
+        <span class="ctx-label" data-i18n="hero.ctx3.label">Durée</span>
+        <span class="ctx-val" data-i18n="hero.ctx3.val">2 ans d'alternance (2024–2026)</span>
       </div>
       <div class="ctx-item">
-        <span class="ctx-label">Formation</span>
-        <span class="ctx-val">Université Paris-Saclay</span>
+        <span class="ctx-label" data-i18n="hero.ctx4.label">Formation</span>
+        <span class="ctx-val" data-i18n="hero.ctx4.val">Université Paris-Saclay</span>
       </div>
     </div>
 
+    <div class="hero-chips">
+      <span class="chip" data-i18n="chip1">Gestion de projet client</span>
+      <span class="chip" data-i18n="chip2">Pilotage d'équipe</span>
+      <span class="chip" data-i18n="chip3">Aide à la décision</span>
+      <span class="chip" data-i18n="chip4">Process Engineering</span>
+      <span class="chip" data-i18n="chip5">Transformation digitale</span>
+      <span class="chip" data-i18n="chip6">Amélioration continue</span>
+    </div>
 
     <div class="hero-cta">
-      <a href="#projets" class="btn-primary">Voir les projets →</a>
-      <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
-      <a href="mailto:imad.belfar@email.com" class="btn-ghost">✉ Contact</a>
+      <a href="#projets" class="btn-primary" data-i18n="hero.cta1">Voir les projets →</a>
+      <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank" class="btn-ghost" data-i18n="hero.cta2">LinkedIn ↗</a>
+      <a href="mailto:imad.belfar@email.com" class="btn-ghost" data-i18n="hero.cta3">✉ Contact</a>
     </div>
   </div>
 </div>
 
-<!-- STATS -->
-<div class="stats-wrapper">
-  <div class="stats-bar">
-    <div class="stat">
-      <span class="stat-val">9</span>
-      <span class="stat-lbl">projets livrés</span>
-    </div>
-    <div class="stat">
-      <span class="stat-val">5</span>
-      <span class="stat-lbl">clients grands comptes</span>
-    </div>
-    <div class="stat">
-      <span class="stat-val">5</span>
-      <span class="stat-lbl">pays déployés</span>
-    </div>
-    <div class="stat">
-      <span class="stat-val">−33%</span>
-      <span class="stat-lbl">délai simulé en production</span>
-    </div>
-    <div class="stat">
-      <span class="stat-val">97,5%</span>
-      <span class="stat-lbl">précision OCR mobile</span>
-    </div>
-    <div class="stat">
-      <span class="stat-val">≈0%</span>
-      <span class="stat-lbl">écart stock (était 35%)</span>
-    </div>
-  </div>
-</div>
+
 
 <!-- PROJECTS -->
 <div class="section" id="projets">
   <div class="section-header">
-    <span class="section-num">01</span>
-    <h2>Projets réalisés</h2>
+    <h2 data-i18n="projects.title">Projets réalisés</h2>
     <div class="section-header-line"></div>
   </div>
   <div class="projects">
 
-    <!-- 01 -->
+    <!-- PROJET 01 : MANAGEMENT OPERATIONNEL & 442Plan (NOUVEAU) -->
+    <div class="pcard">
+      <div class="pcard-stripe stripe-mgt"></div>
+      <div class="pcard-inner">
+        <div class="pcard-top">
+          <div class="pcard-meta">
+            <span class="pcard-num" data-i18n="p01.num">Projet 01 · Management opérationnel & pilotage d’activité</span>
+            <span class="badge badge-mgt" data-i18n="p01.badge">BPCE + PennyLane · Responsabilité laboratoire</span>
+          </div>
+        </div>
+        <h3 class="pcard-title" data-i18n="p01.title">Prise en responsabilité d’un laboratoire sans manager — pilotage opérationnel, qualité et relation client</h3>
+        <p class="pcard-hook" data-i18n="p01.hook">"Quand il n’y avait personne pour structurer l’activité, j’ai repris le pilotage du laboratoire."</p>
+
+        <div class="pcard-context" data-i18n="p01.context">
+         <span class="pcard-context-label">Contexte & enjeu · Évolution interne</span>
+         <strong>Cette mission s’inscrit dans mon évolution au sein de Castles Technology :</strong> après avoir démontré mon autonomie sur des missions terrain, j’ai été désigné pour reprendre le pilotage d’un laboratoire stratégique <strong>sans manager dédié, avec une équipe de 7 techniciens</strong>. Le laboratoire regroupait plusieurs activités critiques pour <strong>BPCE (Banques Populaires / Caisses d’Épargne)</strong> et <strong>PennyLane (éditeur de logiciels comptables)</strong> : préparation/configurations de terminaux, assistance technique aux commerçants, gestion SAV et logistique. L’absence de responsable menaçait la continuité de service et le respect des SLA. J’ai donc assuré le <strong>management direct de l’équipe</strong> : affectation des ressources, suivi des performances individuelles et collectives, gestion des plannings, des absences et des primes variables.
+        </div>
+
+        <p class="pcard-body" data-i18n="p01.body">
+          J’ai assuré le <strong>pilotage quotidien</strong> du laboratoire : affectation des ressources selon les priorités, suivi des performances individuelles et collectives, gestion des escalades opérationnelles et communication directe avec les clients (comités de suivi, reportings SLA, qualité). J’ai également structuré plusieurs <strong>outils internes</strong> pour piloter l’activité en temps réel — notamment <strong>442Plan</strong>, une application web complète (React, Tailwind, Base44).
+          <br><br>
+          <strong>442Plan</strong> centralise : dashboard temps réel (présence techniciens, interventions, compteurs de production), pointage digital remplaçant les feuilles papier, suivi RH (congés, absences), calcul automatique des primes variables et reporting client.
+          <br><br>
+          En parallèle, je gérais une partie de la <strong>facturation client</strong> liée aux prestations du laboratoire.
+        </p>
+
+        <div class="pcard-tools">
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
+          <div class="tools-list">
+            <div class="tool-item" data-i18n="p01.tool1"><strong>Pilotage opérationnel & management transverse</strong> — coordination d’une activité multi-clients sous contraintes SLA, sans lien hiérarchique direct</div>
+            <div class="tool-item" data-i18n="p01.tool2"><strong>Reporting & KPI</strong> — suivi de performance, qualité, productivité, comités clients</div>
+            <div class="tool-item" data-i18n="p01.tool3"><strong>Base44 (BaaS)</strong> — stack complète de l’application 442Plan (dashboard, pointage, primes, RH)</div>
+            <div class="tool-item" data-i18n="p01.tool4"><strong>Gestion de la relation client</strong> — escalades, communication opérationnelle, reporting structuré</div>
+          </div>
+        </div>
+
+        <div class="results">
+          <span class="res res-mgt" data-i18n="p01.res1">Activité stabilisée sans interruption</span>
+          <span class="res res-green" data-i18n="p01.res2">Respect des SLA</span>
+          <span class="res res-green" data-i18n="p01.res3">Amélioration continue</span>
+          <span class="res res-blue" data-i18n="p01.res4">En production quotidienne</span>
+        </div>
+        <div class="techs">
+          <span class="tech">Base44</span><span class="tech">Dashboard</span><span class="tech">Management transverse</span><span class="tech">SLA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJET 02 : Audit Vallery (version originale complète) -->
     <div class="pcard">
       <div class="pcard-stripe stripe-gray"></div>
       <div class="pcard-inner">
         <div class="pcard-top">
           <div class="pcard-meta">
-            <span class="pcard-num">Projet 01 · Audit opérationnel & simulation</span>
-            <span class="badge badge-intern">Castles Technology — Mission interne</span>
+            <span class="pcard-num" data-i18n="p02.num">Projet 02 · Audit opérationnel & simulation</span>
+            <span class="badge badge-intern" data-i18n="p02.badge">Castles Technology - site Liem — Mission interne</span>
           </div>
         </div>
-        <h3 class="pcard-title">Diagnostic du site de réparation de Vallery — la contrainte n'était pas là où tout le monde croyait</h3>
-        <p class="pcard-hook">"Le vrai goulot d'étranglement était invisible aux yeux du management."</p>
+        <h3 class="pcard-title" data-i18n="p02.title">Diagnostic du site de réparation de Vallery — la contrainte n'était pas là où tout le monde croyait</h3>
+        <p class="pcard-hook" data-i18n="p02.hook">"Le vrai goulot d'étranglement était invisible aux yeux du management."</p>
 
-        <div class="pcard-context">
+        <div class="pcard-context" data-i18n="p02.context">
           <span class="pcard-context-label">Contexte & enjeu</span>
           <strong>Castles Technology répare des terminaux de paiement</strong> (les terminaux CB qu'on trouve chez les commerçants) sur son site de Vallery. Le site accumulait du retard, les délais contractuels (SLA) n'étaient plus tenus, et personne ne comprenait pourquoi. La direction EMEA a commandé un <strong>diagnostic d'urgence</strong>. Mission de 2 semaines, commandée directement par le Directeur des Opérations EMEA.
         </div>
 
-        <p class="pcard-body">
-          J'ai analysé l'ensemble des données de production, conduit des interviews terrain, et surtout <strong>suivi physiquement un lot de 40 terminaux</strong> poste par poste pour mesurer les temps réels (pas les temps théoriques). J'ai ensuite modélisé statistiquement ces données et construit des <strong>simulations d'ordonnancement</strong> (en Python) pour tester différents scénarios de réallocation de ressources.
+        <p class="pcard-body" data-i18n="p02.body">
+          J'ai analysé l'ensemble des données de production, conduit des interviews terrain, et surtout <strong>suivi physiquement un lot de 40 terminaux</strong> poste par poste pour mesurer les temps réels (pas les temps théoriques). J'ai ensuite modélisé statistiquement ces données et construit des <strong>simulations d'ordonnancement</strong> (en Python et sur le logiciel Flexsim) pour tester différents scénarios de réallocation de ressources.
           <br><br>
           Le verdict était contre-intuitif : tout le monde pointait l'atelier de réparation comme cause du retard. En réalité, le <strong>goulot d'étranglement était la station d'injection de clés et de mise à jour logicielle</strong> — une étape technique obligatoire mais sous-dotée en capacité. Réallouer des ressources à cet endroit précis permettait de simuler une réduction de délai de 33%.
         </p>
 
         <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
           <div class="tools-list">
-            <div class="tool-item"><strong>Théorie des Contraintes (TOC)</strong> — cadre d'analyse pour identifier le maillon limitant d'un système de production, popularisé par le livre "Le But"</div>
-            <div class="tool-item"><strong>Lean Manufacturing</strong> — méthode d'optimisation industrielle visant à éliminer les gaspillages</div>
-            <div class="tool-item"><strong>Python (pandas, scipy, matplotlib)</strong> — pour l'analyse statistique des données de temps de cycle et la construction des simulations</div>
-            <div class="tool-item"><strong>Simulation d'ordonnancement</strong> — modélisation informatique du flux de production pour tester des scénarios "et si" sans toucher à la ligne réelle</div>
+            <div class="tool-item" data-i18n="p02.tool1"><strong>Théorie des Contraintes (TOC)</strong> — cadre d'analyse pour identifier le maillon limitant d'un système de production, popularisé par le livre "Le But"</div>
+            <div class="tool-item" data-i18n="p02.tool2"><strong>Lean Manufacturing</strong> — méthode d'optimisation industrielle visant à éliminer les gaspillages</div>
+            <div class="tool-item" data-i18n="p02.tool3"><strong>Python (pandas, scipy, matplotlib)</strong> — pour l'analyse statistique des données de temps de cycle et la construction des simulations</div>
+            <div class="tool-item" data-i18n="p02.tool4"><strong>Simulation d'ordonnancement</strong> — modélisation informatique du flux de production pour tester des scénarios "et si" sans toucher à la ligne réelle</div>
           </div>
         </div>
 
         <div class="results">
-          <span class="res res-green">−33% de délai simulé</span>
-          <span class="res res-amber">Réallocation capacité actionnée</span>
-          <span class="res res-blue">Présenté au EMEA Ops Director</span>
+          <span class="res res-green" data-i18n="p02.res1">−33% de délai simulé</span>
+          <span class="res res-amber" data-i18n="p02.res2">Réallocation capacité actionnée</span>
+          <span class="res res-blue" data-i18n="p02.res3">Présenté au EMEA Ops Director</span>
         </div>
         <div class="techs">
           <span class="tech">Python</span><span class="tech">Statistiques</span><span class="tech">Simulation</span><span class="tech">Théorie des Contraintes</span><span class="tech">Lean</span>
@@ -577,137 +638,131 @@ nav {
       </div>
     </div>
 
-    <!-- 02 -->
+    <!-- PROJET 03 : myPOS (version originale) -->
     <div class="pcard">
       <div class="pcard-stripe stripe-green"></div>
       <div class="pcard-inner">
         <div class="pcard-top">
           <div class="pcard-meta">
-            <span class="pcard-num">Projet 02 · Système d'information & logistique</span>
-            <span class="badge badge-mypos">myPOS — Fintech européenne, +500 000 clients commerçants</span>
+            <span class="pcard-num" data-i18n="p03.num">Projet 03 · Système d'information & logistique</span>
+            <span class="badge badge-mypos" data-i18n="p03.badge">myPOS — Fintech européenne, +500 000 clients commerçants</span>
           </div>
         </div>
-        <h3 class="pcard-title">Système de gestion des commandes déployé dans 5 pays en 2 semaines</h3>
-        <p class="pcard-hook">"Aucun outil prêt des deux côtés. Go-live dans 14 jours."</p>
+        <h3 class="pcard-title" data-i18n="p03.title">Système de gestion des commandes déployé dans 5 pays en 2 semaines</h3>
+        <p class="pcard-hook" data-i18n="p03.hook">"Aucun outil prêt des deux côtés. Go-live dans 14 jours."</p>
 
-        <div class="pcard-context">
+        <div class="pcard-context" data-i18n="p03.context">
           <span class="pcard-context-label">Contexte & enjeu</span>
           <strong>myPOS est une fintech</strong> (entreprise de technologie financière) qui fournit des solutions de paiement aux commerçants en Europe. En tant que nouveau client de Castles Technology, myPOS devait lancer sa logistique de distribution de terminaux en France — sans avoir de système opérationnel en place côté client, et sans que Castles n'ait prévu d'outil dédié. <strong>Délai : 14 jours avant le premier vrai envoi de commandes.</strong>
         </div>
 
-        <p class="pcard-body">
+        <p class="pcard-body" data-i18n="p03.body">
           J'ai évalué les options disponibles (développement custom, ERP existant, no-code), et choisi <strong>AppSheet</strong> — une plateforme low-code de Google permettant de créer des applications métier sans écrire beaucoup de code — pour sa rapidité de déploiement et sa flexibilité.
           <br><br>
-          En deux semaines, j'ai conçu le <strong>modèle de données complet</strong>, un workflow de validation en 6 étapes (saisie commande → validation → préparation → expédition → livraison → facturation), des droits d'accès par rôle (opérateur, responsable, admin), la <strong>validation automatique des adresses</strong> via l'API Google Maps, la génération automatique des bons de préparation, et la gestion des spécificités DOM-TOM (Guadeloupe, Martinique, etc.).
-          L'application a été déployée progressivement dans 5 pays avec environ 20 utilisateurs.
+          En deux semaines, j'ai conçu le <strong>modèle de données complet</strong>, un workflow de validation en 6 étapes (saisie commande → validation → préparation → expédition → livraison → facturation), des droits d'accès par rôle (opérateur, responsable, admin), la <strong>validation automatique des adresses</strong> via l'API Google Maps et la gestion des spécificités DOM-TOM (Guadeloupe, Martinique, etc.).
+          L'application a été déployée progressivement dans 5 pays avec environ 20 utilisateurs (techniciens + responsables).
         </p>
 
         <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
           <div class="tools-list">
-            <div class="tool-item"><strong>AppSheet (Google)</strong> — plateforme low-code permettant de créer des applications métier connectées à des bases de données, sans développement lourd</div>
-            <div class="tool-item"><strong>Google Cloud / Google Sheets</strong> — backend de données hébergé dans l'écosystème Google, accessible en temps réel</div>
-            <div class="tool-item"><strong>API Chronopost</strong> — intégration directe avec le transporteur pour générer les étiquettes d'expédition automatiquement</div>
-            <div class="tool-item"><strong>API Google Maps</strong> — validation des adresses de livraison à la saisie pour éviter les erreurs d'acheminement</div>
+            <div class="tool-item" data-i18n="p03.tool1"><strong>AppSheet (Google)</strong> — plateforme low-code permettant de créer des applications métier connectées à des bases de données, sans développement lourd</div>
           </div>
         </div>
 
         <div class="results">
-          <span class="res res-green">Go-live J1 dans les délais</span>
-          <span class="res res-amber">5 pays · ~20 utilisateurs</span>
-          <span class="res res-blue">Traçabilité S/N fiabilisée</span>
+          <span class="res res-green" data-i18n="p03.res1">Go-live J1 dans les délais</span>
+          <span class="res res-amber" data-i18n="p03.res2">5 pays · ~20 utilisateurs</span>
+          <span class="res res-blue" data-i18n="p03.res3">Workflows centralisés</span>
         </div>
         <div class="techs">
-          <span class="tech">AppSheet</span><span class="tech">Google Cloud</span><span class="tech">Chronopost API</span><span class="tech">Google Maps API</span><span class="tech">Low-Code</span>
+          <span class="tech">AppSheet</span><span class="tech">Low-Code</span>
         </div>
       </div>
     </div>
 
-    <!-- 03 -->
+    <!-- PROJET 04 : CaSERV BNP -->
     <div class="pcard">
       <div class="pcard-stripe stripe-blue"></div>
       <div class="pcard-inner">
         <div class="pcard-top">
           <div class="pcard-meta">
-            <span class="pcard-num">Projet 03 · Projet grand compte · Chef de projet</span>
-            <span class="badge badge-bnp">BNP Paribas — 1ère banque française, ~200 000 collaborateurs</span>
+            <span class="pcard-num" data-i18n="p04.num">Projet 04 · Projet grand compte · Chef de projet</span>
+            <span class="badge badge-bnp" data-i18n="p04.badge">BNP Paribas — 1ère banque française, ~200 000 collaborateurs</span>
           </div>
         </div>
-        <h3 class="pcard-title">CaSERV — Plateforme de service intégrée pour la gestion de 60 000 terminaux marchands</h3>
-        <p class="pcard-hook">"Construire from scratch en 7 mois ce qui prend normalement 18."</p>
+        <h3 class="pcard-title" data-i18n="p04.title">CaSERV — Plateforme de service intégrée pour la gestion des terminaux des marchands</h3>
+        <p class="pcard-hook" data-i18n="p04.hook">"Construire from scratch en 7 mois ce qui prend normalement 18."</p>
 
-        <div class="pcard-context">
+        <div class="pcard-context" data-i18n="p04.context">
           <span class="pcard-context-label">Contexte & enjeu</span>
           <strong>BNP Paribas Services Monétiques</strong> est la division de BNP qui gère les équipements de paiement (terminaux CB) de ses clients commerçants. Elle a confié à Castles Technology la gestion opérationnelle de son parc de <strong>60 000+ terminaux</strong> en France : réparations, remplacements, hotline, logistique. C'est un contrat majeur qui nécessitait de construire une plateforme de service complète — CaSERV — en intégrant une demi-douzaine de logiciels différents. Délai : 7 mois.
         </div>
 
-        <p class="pcard-body">
+        <p class="pcard-body" data-i18n="p04.body">
           En rôle de <strong>chef de projet local</strong>, en appui du transition manager senior et en collaboration avec l'IT Leader basé au Royaume-Uni, j'ai coordonné l'ensemble des chantiers techniques et fonctionnels.
           <br><br>
-          J'ai formalisé <strong>12 processus principaux en BPMN</strong> (langage de modélisation des processus métier, comme des organigrammes standardisés) couvrant tous les scénarios de service de bout en bout. J'ai participé à l'intégration de 6 systèmes : <strong>Matrix42</strong> (gestion des interventions et tickets), <strong>CasHub</strong> (portail client interne Castles), <strong>Chronopost</strong> (transport), <strong>Lemon Group</strong> (gestion des pièces détachées), <strong>Bright Pattern</strong> (centre d'appels), et <strong>NetSuite</strong> (ERP / facturation). J'ai également piloté les cycles UAT (tests de recette avec les utilisateurs finaux BNP) et configuré le centre d'appels 8 agents.
+          J'ai formalisé <strong>12 processus principaux en BPMN</strong> (langage de modélisation des processus métier, comme des organigrammes standardisés) couvrant tous les scénarios de service de bout en bout. J'ai participé à l'intégration de 5 systèmes : <strong>Matrix42</strong> (gestion des interventions et tickets), <strong>CasHub</strong> (portail client interne Castles), <strong>Chronopost</strong> (transport), <strong>Lemon Group</strong> (gestion des pièces détachées) et <strong>Bright Pattern</strong> (centre d'appels). J'ai également piloté les cycles UAT (tests de recette avec les utilisateurs finaux BNP) et configuré le centre d'appels 8 agents.
         </p>
 
         <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
           <div class="tools-list">
-            <div class="tool-item"><strong>BPMN (Business Process Model & Notation)</strong> — standard international pour modéliser graphiquement les processus d'entreprise, comme un plan d'architecte pour les flux de travail</div>
-            <div class="tool-item"><strong>Matrix42</strong> — logiciel de gestion des actifs IT et des tickets de support (type "ServiceNow" pour le marché européen)</div>
-            <div class="tool-item"><strong>Bright Pattern</strong> — plateforme cloud de centre d'appels (omnicanal : téléphone, email, chat)</div>
-            <div class="tool-item"><strong>UAT (User Acceptance Testing)</strong> — phase de tests où les vrais utilisateurs valident que le système correspond à leurs besoins avant le go-live</div>
-            <div class="tool-item"><strong>NetSuite</strong> — ERP cloud d'Oracle utilisé pour la facturation et la gestion financière</div>
+            <div class="tool-item" data-i18n="p04.tool1"><strong>BPMN (Business Process Model & Notation)</strong> — standard international pour modéliser graphiquement les processus d'entreprise, comme un plan d'architecte pour les flux de travail</div>
+            <div class="tool-item" data-i18n="p04.tool2"><strong>Matrix42</strong> — logiciel de gestion des actifs IT et des tickets de support (type "ServiceNow" pour le marché européen)</div>
+            <div class="tool-item" data-i18n="p04.tool3"><strong>Bright Pattern</strong> — plateforme cloud de centre d'appels (omnicanal : téléphone, email, chat)</div>
+            <div class="tool-item" data-i18n="p04.tool4"><strong>UAT (User Acceptance Testing)</strong> — phase de tests où les vrais utilisateurs valident que le système correspond à leurs besoins avant le go-live</div>
           </div>
         </div>
 
         <div class="results">
-          <span class="res res-green">Go-live mai 2026</span>
-          <span class="res res-amber">12 processus BPMN livrés</span>
-          <span class="res res-blue">6 systèmes intégrés</span>
-          <span class="res res-purple">60 000+ terminaux gérés</span>
+          <span class="res res-green" data-i18n="p04.res1">Go-live mai 2026</span>
+          <span class="res res-amber" data-i18n="p04.res2">12 processus BPMN livrés</span>
+          <span class="res res-blue" data-i18n="p04.res3">5 systèmes intégrés</span>
+          <span class="res res-purple" data-i18n="p04.res4">2 clients gérés</span>
         </div>
         <div class="techs">
-          <span class="tech">Matrix42</span><span class="tech">BPMN / Draw.io</span><span class="tech">Bright Pattern</span><span class="tech">NetSuite</span><span class="tech">UAT</span><span class="tech">Intégration API</span>
+          <span class="tech">Matrix42</span><span class="tech">BPMN / Draw.io</span><span class="tech">Bright Pattern</span><span class="tech">UAT</span><span class="tech">Intégration API</span>
         </div>
       </div>
     </div>
 
-    <!-- 04 -->
+    <!-- PROJET 05 : Roumanie -->
     <div class="pcard">
       <div class="pcard-stripe stripe-blue"></div>
       <div class="pcard-inner">
         <div class="pcard-top">
           <div class="pcard-meta">
-            <span class="pcard-num">Projet 04 · Mission terrain internationale</span>
-            <span class="badge badge-bnp">iNETcc — Centre d'appels partenaire BNP Paribas (Bucarest, Roumanie)</span>
+            <span class="pcard-num" data-i18n="p05.num">Projet 05 · Mission terrain internationale</span>
+            <span class="badge badge-bnp" data-i18n="p05.badge">iNETcc — Centre d'appels partenaire BNP Paribas (Bucarest, Roumanie)</span>
           </div>
         </div>
-        <h3 class="pcard-title">Audit sur site en Roumanie — Validation opérationnelle & transfert de bonnes pratiques</h3>
-        <p class="pcard-hook">"On est venu vérifier. On est reparti avec 5 améliorations actionnées dès le lendemain."</p>
+        <h3 class="pcard-title" data-i18n="p05.title">Audit sur site en Roumanie — Validation opérationnelle & transfert de bonnes pratiques</h3>
+        <p class="pcard-hook" data-i18n="p05.hook">"On est venu vérifier. On est reparti avec 5 améliorations actionnées dès le lendemain."</p>
 
-        <div class="pcard-context">
+        <div class="pcard-context" data-i18n="p05.context">
           <span class="pcard-context-label">Contexte & enjeu</span>
-          Dans le cadre du projet CaSERV (BNP Paribas), la hotline client serait opérée par <strong>iNETcc</strong>, un prestataire spécialisé dans les centres d'appels basé en Roumanie. Avant le go-live, il fallait s'assurer que leurs agents maîtrisaient nos outils, et que leur organisation était compatible avec nos exigences de service. Mission de <strong>4 jours à Bucarest.</strong>
+          Dans le cadre du projet CaSERV (BNP Paribas), la hotline Castles a démarré en phase pilote afin de couvrir deux régions en France, avec la gestion des appels entrants et sortants. Les prévisions de charge pour le go-live national indiquaient toutefois une forte augmentation des volumes d’appels. Afin de sécuriser le dispositif et garantir la continuité de service, l’entreprise a fait appel à <strong>iNETcc</strong>, un prestataire spécialisé dans les centres d’appels basé en Roumanie, pour assurer un backup sur les appels sortants uniquement. Mission de <strong>4 jours à Bucarest.</strong>
         </div>
 
-        <p class="pcard-body">
-          Sur place, j'ai validé l'intégration de <strong>Matrix42</strong> (gestion des tickets) et <strong>Bright Pattern</strong> (système téléphonique) dans leur environnement, testé les scénarios en conditions réelles avec les agents, et vérifié leur niveau de préparation sur les processus BNP Paribas que j'avais formalisés.
+        <p class="pcard-body" data-i18n="p05.body">
+          Sur place, je me suis assuré que les agents soient bien aptes à échanger avec des commerçants français, qu’ils disposent des processus nécessaires, et qu’ils comprennent parfaitement les offres de notre client BNP Paribas. J’ai participé à l’amélioration des scripts téléphoniques existants en m’appuyant sur l’expérience terrain des agents, et j’ai vérifié que la procédure d’escalade vers notre hotline interne était bien comprise par tous.
           <br><br>
-          En parallèle, j'ai documenté leur organisation interne : <strong>dashboards de supervision en temps réel, protocoles de coaching, gestion des files d'attente et des pauses.</strong> J'ai identifié 5 points d'amélioration quick wins — des ajustements rapides à fort impact — que j'ai formalisés dans un mémo livré au management iNETcc et appliqués dès le démarrage du support BNP.
+          J’ai également contrôlé le bon fonctionnement de leurs outils (Matrix42, Bright Pattern), m’assuré qu’ils étaient maîtrisés par les équipes, et que les comptes utilisateurs étaient créés dans les différents systèmes. Cette mission a permis de valider la montée en compétences opérationnelles du centre d’appels partenaire avant le lancement national.
         </p>
 
         <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
           <div class="tools-list">
-            <div class="tool-item"><strong>Audit de processus</strong> — observation et évaluation structurée des pratiques réelles sur le terrain</div>
-            <div class="tool-item"><strong>Conduite du changement</strong> — accompagnement des équipes dans l'adoption de nouveaux outils et méthodes</div>
-            <div class="tool-item"><strong>Bright Pattern</strong> — configuration et tests de la plateforme de centre d'appels</div>
-            <div class="tool-item"><strong>Matrix42</strong> — validation de l'intégration et formation des agents à la gestion des tickets</div>
+            <div class="tool-item" data-i18n="p05.tool1"><strong>Audit de processus</strong> — observation et évaluation structurée des pratiques réelles sur le terrain</div>
+            <div class="tool-item" data-i18n="p05.tool2"><strong>Conduite du changement</strong> — accompagnement des équipes dans l'adoption de nouveaux outils et méthodes</div>
           </div>
         </div>
 
         <div class="results">
-          <span class="res res-green">5 améliorations actionnées immédiatement</span>
-          <span class="res res-amber">Mémo livré au management</span>
-          <span class="res res-blue">Agents validés opérationnels</span>
+          <span class="res res-blue" data-i18n="p05.res1">Agents validés opérationnels</span>
+          <span class="res res-amber" data-i18n="p05.res2">Outils fonctionnels</span>
+          <span class="res res-amber" data-i18n="p05.res3">Scripts d'appel améliorés</span>
         </div>
         <div class="techs">
           <span class="tech">Audit process</span><span class="tech">Conduite du changement</span><span class="tech">Bright Pattern</span><span class="tech">Matrix42</span>
@@ -715,185 +770,89 @@ nav {
       </div>
     </div>
 
-    <!-- 05 -->
-    <div class="pcard">
-      <div class="pcard-stripe stripe-purple"></div>
-      <div class="pcard-inner">
-        <div class="pcard-top">
-          <div class="pcard-meta">
-            <span class="pcard-num">Projet 05 · Application métier full-stack</span>
-            <span class="badge badge-bpce">BPCE (2ème groupe bancaire français) + PennyLane (logiciel comptable)</span>
-          </div>
-        </div>
-        <h3 class="pcard-title">442Plan — Application web de pilotage opérationnel d'équipe en temps réel</h3>
-        <p class="pcard-hook">"Du chaos Excel à une source de vérité unique, accessible depuis n'importe quel écran."</p>
-
-        <div class="pcard-context">
-          <span class="pcard-context-label">Contexte & enjeu</span>
-          Pour gérer les 7 techniciens de terrain intervenant chez <strong>BPCE</strong> (réseau Banque Populaire / Caisse d'Épargne) et <strong>PennyLane</strong> (éditeur de logiciel comptable), le management utilisait des outils bricolés : planning sur Excel, pointage sur feuilles papier, calcul des primes à la main. Résultat : pertes de temps, erreurs, litiges avec les techniciens sur leurs rémunérations variables.
-        </div>
-
-        <p class="pcard-body">
-          J'ai conçu et développé <strong>442Plan</strong>, une application web complète avec :
-          <br><br>
-          — Un <strong>dashboard temps réel</strong> affichant la présence des techniciens, leurs interventions du jour et leurs compteurs de production<br>
-          — Un système de <strong>pointage digital</strong> (arrivée / départ / pause) remplaçant les feuilles papier<br>
-          — Un <strong>suivi RH</strong> : congés, absences, contrats<br>
-          — Un <strong>compteur de production</strong> par demi-journée pour chaque technicien<br>
-          — Un module de <strong>calcul automatique des primes</strong> basé sur les règles contractuelles définies par le management<br><br>
-          L'application est déployée et utilisée quotidiennement par l'équipe d'encadrement.
-        </p>
-
-        <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
-          <div class="tools-list">
-            <div class="tool-item"><strong>React</strong> — bibliothèque JavaScript de Meta pour construire des interfaces web interactives</div>
-            <div class="tool-item"><strong>Tailwind CSS</strong> — framework CSS utilitaire permettant de styliser rapidement une interface</div>
-            <div class="tool-item"><strong>Base44 (BaaS)</strong> — plateforme Backend-as-a-Service gérant l'hébergement, la base de données et l'authentification, pour éviter de gérer une infrastructure serveur</div>
-          </div>
-        </div>
-
-        <div class="results">
-          <span class="res res-green">−3h/semaine de reporting</span>
-          <span class="res res-amber">Litiges primes éliminés</span>
-          <span class="res res-blue">En production quotidienne</span>
-        </div>
-        <div class="techs">
-          <span class="tech">React</span><span class="tech">Tailwind CSS</span><span class="tech">Base44 (BaaS)</span><span class="tech">Dashboard temps réel</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 06 -->
+    <!-- PROJET 06 : ERPNext -->
     <div class="pcard">
       <div class="pcard-stripe stripe-gray"></div>
       <div class="pcard-inner">
         <div class="pcard-top">
           <div class="pcard-meta">
-            <span class="pcard-num">Projet 06 · Transformation SI & ERP</span>
-            <span class="badge badge-intern">Castles Technology — Mission interne</span>
+            <span class="pcard-num" data-i18n="p06.num">Projet 06 · Transformation SI & ERP</span>
+            <span class="badge badge-intern" data-i18n="p06.badge">Castles Technology — Mission interne</span>
           </div>
         </div>
-        <h3 class="pcard-title">ERPNext — Proof of Concept pour remplacer le logiciel de gestion legacy OGI</h3>
-        <p class="pcard-hook">"Comment faire rentrer la réparation de terminaux dans un ERP conçu pour la fabrication ?"</p>
+        <h3 class="pcard-title" data-i18n="p06.title">ERPNext — Proof of Concept pour remplacer le logiciel de gestion legacy OGI</h3>
+        <p class="pcard-hook" data-i18n="p06.hook">"Comment faire rentrer la réparation de terminaux dans un ERP conçu pour la fabrication ?"</p>
 
-        <div class="pcard-context">
+        <div class="pcard-context" data-i18n="p06.context">
           <span class="pcard-context-label">Contexte & enjeu</span>
           Un <strong>ERP (Enterprise Resource Planning)</strong> est le logiciel central d'une entreprise qui gère les stocks, les commandes, la facturation, les ressources humaines, etc. Le logiciel legacy <strong>OGI</strong> utilisé par Castles Technology était obsolète et bloquait la croissance. La direction IT a lancé un projet de remplacement. Problème : les ERP du marché sont conçus pour la fabrication (on sait quelles pièces entrent dans un produit avant de le fabriquer). Or, dans la <strong>réparation</strong> de terminaux, on ne sait quelles pièces remplacer qu'<em>après</em> avoir diagnostiqué l'appareil.
         </div>
 
-        <p class="pcard-body">
+        <p class="pcard-body" data-i18n="p06.body">
           J'ai réalisé un <strong>benchmark de 4 ERP</strong> (ERPNext, Odoo, Sage, solution propriétaire) selon des critères techniques et fonctionnels, avec recommandation documentée. ERPNext (solution open-source) a été sélectionné.
           <br><br>
           Le défi principal : les <strong>BOMs (Bill of Materials, listes de composants)</strong> classiques exigent de déclarer les pièces nécessaires <em>avant</em> de commencer. J'ai trouvé la solution technique : un <strong>"Phantom BOM"</strong> (article fantôme) — une fonctionnalité d'ERPNext permettant de créer des ordres de fabrication/réparation sans composants prédéfinis, avec saisie des pièces effectivement consommées en fin d'intervention. J'ai déployé ERPNext en local via <strong>Docker</strong> pour le PoC, configuré le module RMA (Return Merchandise Authorization — gestion des retours produits), et livré une recommandation go/no-go au comité IT.
         </p>
 
         <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
           <div class="tools-list">
-            <div class="tool-item"><strong>ERPNext</strong> — ERP open-source basé sur le framework Frappe, particulièrement utilisé par les PME industrielles</div>
-            <div class="tool-item"><strong>Docker</strong> — outil de conteneurisation permettant de déployer un environnement logiciel complet sur n'importe quelle machine</div>
-            <div class="tool-item"><strong>Phantom BOM</strong> — technique de gestion industrielle permettant de créer des ordres sans nomenclature prédéfinie</div>
-            <div class="tool-item"><strong>RMA (Return Merchandise Authorization)</strong> — processus standardisé de gestion des retours et réparations produits</div>
+            <div class="tool-item" data-i18n="p06.tool1"><strong>ERPNext</strong> — ERP open-source basé sur le framework Frappe, particulièrement utilisé par les PME industrielles</div>
+            <div class="tool-item" data-i18n="p06.tool2"><strong>Docker</strong> — outil de conteneurisation permettant de déployer un environnement logiciel complet sur n'importe quelle machine</div>
+            <div class="tool-item" data-i18n="p06.tool3"><strong>RMA (Return Merchandise Authorization)</strong> — processus standardisé de gestion des retours et réparations produits</div>
           </div>
         </div>
 
         <div class="results">
-          <span class="res res-green">PoC validé</span>
-          <span class="res res-amber">Recommandation go/no-go livrée au comité IT</span>
+          <span class="res res-green" data-i18n="p06.res1">PoC validé</span>
+          <span class="res res-amber" data-i18n="p06.res2">Recommandation go/no-go livrée au comité IT</span>
         </div>
         <div class="techs">
-          <span class="tech">ERPNext</span><span class="tech">Docker</span><span class="tech">Phantom BOM</span><span class="tech">RMA</span><span class="tech">Benchmark ERP</span>
+          <span class="tech">ERPNext</span><span class="tech">Docker</span><span class="tech">RMA</span><span class="tech">Benchmark ERP</span>
         </div>
       </div>
     </div>
 
-    <!-- 07 -->
-    <div class="pcard">
-      <div class="pcard-stripe stripe-amber"></div>
-      <div class="pcard-inner">
-        <div class="pcard-top">
-          <div class="pcard-meta">
-            <span class="pcard-num">Projet 07 · Qualité & gestion des stocks</span>
-            <span class="badge badge-avem">AVEM — Distributeur d'équipements de paiement</span>
-          </div>
-        </div>
-        <h3 class="pcard-title">Outil de suivi des pièces détachées — 35% d'écart de stock ramené à quasi zéro</h3>
-        <p class="pcard-hook">"La cause n'était pas un manque de rigueur des équipes — c'était l'absence d'outil de traçabilité."</p>
-
-        <div class="pcard-context">
-          <span class="pcard-context-label">Contexte & enjeu</span>
-          <strong>AVEM distribue et maintient des équipements de paiement</strong>. Leur problème : un écart de <strong>35%</strong> entre le stock physique (ce qui est réellement en entrepôt) et le stock numérique (ce que dit leur système informatique). Concrètement, cela signifie que 35% des pièces détachées ne sont pas comptabilisées — ce qui génère des ruptures imprévues, des commandes inutiles, et des litiges avec les clients.
-        </div>
-
-        <p class="pcard-body">
-          J'ai appliqué la méthode des <strong>5 Pourquoi</strong> — une technique d'analyse de cause racine : on remonte la chaîne causale en posant "pourquoi ?" à chaque étape jusqu'à trouver la vraie cause. Diagnostic : aucune traçabilité fine des consommations de pièces lors des interventions. Les techniciens prélevaient des pièces sans enregistrement systématique.
-          <br><br>
-          Solution développée : un <strong>formulaire Excel/VBA avec scan de codes-barres</strong>. À chaque mouvement de stock (entrée ou sortie de pièce), le technicien scanne le code-barres de la pièce — ce qui génère automatiquement un <strong>identifiant unique de mouvement, horodaté, avec le nom de l'opérateur</strong> (piste d'audit complète). Le système déclenche automatiquement des <strong>alertes de réapprovisionnement</strong> quand le stock d'une référence passe sous un seuil minimum.
-        </p>
-
-        <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
-          <div class="tools-list">
-            <div class="tool-item"><strong>Excel / VBA (Visual Basic for Applications)</strong> — langage de programmation intégré à Excel permettant de créer des formulaires et d'automatiser des tâches</div>
-            <div class="tool-item"><strong>Scan code-barres</strong> — lecture automatique des références produits pour éliminer les erreurs de saisie manuelle</div>
-            <div class="tool-item"><strong>Méthode des 5 Pourquoi</strong> — technique d'analyse de cause racine issue du Lean Manufacturing, développée par Toyota</div>
-          </div>
-        </div>
-
-        <div class="results">
-          <span class="res res-green">35% → ~0% d'écart de stock</span>
-          <span class="res res-amber">Alertes réapprovisionnement automatiques</span>
-          <span class="res res-blue">Piste d'audit complète</span>
-        </div>
-        <div class="techs">
-          <span class="tech">Excel / VBA</span><span class="tech">Scan code-barres</span><span class="tech">5 Pourquoi</span><span class="tech">Lean</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 08 -->
+    <!-- PROJET 07 : ICCHI Android -->
     <div class="pcard">
       <div class="pcard-stripe stripe-gray"></div>
       <div class="pcard-inner">
         <div class="pcard-top">
           <div class="pcard-meta">
-            <span class="pcard-num">Projet 08 · Application mobile Android</span>
-            <span class="badge badge-intern">Castles Technology — Mission interne, enjeu qualité critique</span>
+            <span class="pcard-num" data-i18n="p07.num">Projet 07 · Application mobile Android</span>
+            <span class="badge badge-intern" data-i18n="p07.badge">Castles Technology — Mission interne, enjeu qualité critique</span>
           </div>
         </div>
-        <h3 class="pcard-title">ICCHI — Application Android de contrôle qualité par OCR, 100% hors-ligne</h3>
-        <p class="pcard-hook">"Les données financières ne quittent jamais l'appareil — contrainte non négociable dans le paiement."</p>
+        <h3 class="pcard-title" data-i18n="p07.title">ICCHI — Application Android de contrôle qualité par OCR, 100% hors-ligne</h3>
+        <p class="pcard-hook" data-i18n="p07.hook">"Les données financières ne quittent jamais l'appareil — contrainte non négociable dans le paiement."</p>
 
-        <div class="pcard-context">
+        <div class="pcard-context" data-i18n="p07.context">
           <span class="pcard-context-label">Contexte & enjeu</span>
-          En 2024, des <strong>inversions de terminaux</strong> surviennent lors des reconditionnements : un terminal destiné à un client A est expédié au client B. Dans le domaine du paiement électronique, c'est un incident grave — les terminaux contiennent des configurations financières sensibles. Chaque erreur entraîne un <strong>reconditionnement coûteux</strong> (retour, effacement, reconfiguration, réexpédition) et une rupture de confiance client. Contrainte absolue : impossible d'envoyer ces données sur internet pour les vérifier dans le cloud.
+          En 2024, des <strong>inversions de terminaux</strong> surviennent lors des reconditionnements : un terminal destiné à un client A est expédié au client B. Dans le domaine du paiement électronique, c'est un incident grave — les terminaux contiennent des configurations financières sensibles. Chaque erreur entraîne un <strong>reconditionnement coûteux</strong> (retour, effacement, reconfiguration, réexpédition) et une rupture de confiance client.
         </div>
 
-        <p class="pcard-body">
+        <p class="pcard-body" data-i18n="p07.body">
           J'ai développé une <strong>application Android native en Kotlin</strong> (le langage officiel pour Android) qui fonctionne intégralement en mode hors-ligne. L'application :
           <br><br>
           1. Extrait les données du <strong>PDF de mission</strong> (bon de commande client) via PdfRenderer<br>
           2. Lit les <strong>photos du ticket imprimé</strong> par le terminal via ML Kit OCR (reconnaissance optique de caractères de Google, tournant localement sur l'appareil)<br>
           3. <strong>Recoupe les deux sources</strong> via un dictionnaire de synonymes (un numéro peut s'écrire de plusieurs façons selon le modèle)<br>
           4. Affiche instantanément une validation ✓ ou une alerte ✗ à l'opérateur<br><br>
-          Zéro donnée ne quitte l'appareil. Zéro réseau requis.
+          5. Enregistre une trace locale de chaque contrôle pour audit et amélioration continue.
         </p>
 
         <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
           <div class="tools-list">
-            <div class="tool-item"><strong>Kotlin</strong> — langage de programmation moderne pour Android, recommandé par Google depuis 2017</div>
-            <div class="tool-item"><strong>ML Kit OCR (Google)</strong> — bibliothèque d'intelligence artificielle embarquée permettant de lire du texte dans des images, sans réseau</div>
-            <div class="tool-item"><strong>PdfRenderer (Android SDK)</strong> — API native Android pour afficher et extraire le contenu de fichiers PDF</div>
-            <div class="tool-item"><strong>Architecture offline-first</strong> — conception où l'application fonctionne entièrement sans connexion internet, en stockant et traitant tout localement</div>
+            <div class="tool-item" data-i18n="p07.tool1"><strong>Kotlin</strong> — langage de programmation moderne pour Android, recommandé par Google depuis 2017</div>
+            <div class="tool-item" data-i18n="p07.tool2"><strong>ML Kit OCR (Google)</strong> — bibliothèque d'intelligence artificielle embarquée permettant de lire du texte dans des images, sans réseau</div>
           </div>
         </div>
 
         <div class="results">
-          <span class="res res-green">97,5% de précision (39/40 terminaux)</span>
-          <span class="res res-amber">100% hors-ligne</span>
-          <span class="res res-blue">Stress opérateur éliminé</span>
+          <span class="res res-green" data-i18n="p07.res1">97,5% de précision (39/40 terminaux)</span>
+          <span class="res res-amber" data-i18n="p07.res2">Tracabilité des opérations de controle</span>
+          <span class="res res-blue" data-i18n="p07.res3">Stress et fatigue opérateur éliminée</span>
         </div>
         <div class="techs">
           <span class="tech">Kotlin</span><span class="tech">ML Kit OCR</span><span class="tech">PdfRenderer</span><span class="tech">Android</span>
@@ -901,43 +860,42 @@ nav {
       </div>
     </div>
 
-    <!-- 09 -->
+    <!-- PROJET 08 : RMA BPMN -->
     <div class="pcard">
       <div class="pcard-stripe stripe-gray"></div>
       <div class="pcard-inner">
         <div class="pcard-top">
           <div class="pcard-meta">
-            <span class="pcard-num">Projet 09 · Optimisation & modélisation de processus</span>
-            <span class="badge badge-intern">Castles Technology — Mission interne</span>
+            <span class="pcard-num" data-i18n="p08.num">Projet 08 · Optimisation & modélisation de processus</span>
+            <span class="badge badge-intern" data-i18n="p08.badge">Castles Technology — Mission interne</span>
           </div>
         </div>
-        <h3 class="pcard-title">Refonte du processus RMA — Modélisation BPMN & spécification pour l'ERP futur</h3>
-        <p class="pcard-hook">"25 minutes de saisie pour 4 réparations simples. Le vrai problème était dans la conception du flux."</p>
+        <h3 class="pcard-title" data-i18n="p08.title">Refonte du processus RMA — Modélisation BPMN & spécification pour l'ERP futur</h3>
+        <p class="pcard-hook" data-i18n="p08.hook">"25 minutes de saisie pour 4 réparations simples. Le vrai problème était dans la conception du flux."</p>
 
-        <div class="pcard-context">
+        <div class="pcard-context" data-i18n="p08.context">
           <span class="pcard-context-label">Contexte & enjeu</span>
           Le <strong>processus RMA (Return Merchandise Authorization)</strong> est la procédure standard pour gérer les retours de produits défectueux : réception, diagnostic, réparation ou échange, renvoi au client. Chez Castles, ce processus prenait beaucoup trop de temps et comportait de nombreuses étapes manuelles redondantes. De plus, sa modélisation précise était nécessaire pour servir de <strong>spécification fonctionnelle au futur module RMA d'ERPNext</strong>.
         </div>
 
-        <p class="pcard-body">
-          J'ai d'abord cartographié le <strong>flux terrain réel</strong> (pas le théorique, qui divergeait souvent) en observant les opérations et en interview sur les cas dérogatoires. Résultat : le modèle officiel ne prenait pas en compte un <strong>bypass niveau 0</strong> (pour les échanges standards simples, pas besoin de passer par toutes les étapes) ni les <strong>boucles de rétroaction</strong> quand un défaut est découvert en cours de nettoyage ou lors des tests finaux.
+        <p class="pcard-body" data-i18n="p08.body">
+          J'ai d'abord cartographié le <strong>flux terrain réel</strong> (pas le théorique, qui divergeait souvent) en observant les opérations et en interviewant sur les cas dérogatoires. Résultat : le modèle officiel ne prenait pas en compte un <strong>bypass niveau 0</strong> (pour les échanges standards simples, pas besoin de passer par toutes les étapes) ni les <strong>boucles de rétroaction</strong> quand un défaut est découvert en cours de nettoyage ou lors des tests finaux.
           <br><br>
-          J'ai modélisé le processus complet en <strong>BPMN</strong> avec tous les chemins alternatifs, décisions et exceptions. Ce modèle est devenu la <strong>spécification fonctionnelle officielle</strong> du module RMA pour ERPNext, transmise à l'équipe IT pour le développement.
+          J'ai modélisé le processus complet en <strong>BPMN</strong> avec tous les chemins alternatifs, décisions et exceptions. 
         </p>
-
         <div class="pcard-tools">
-          <span class="tools-label">Méthodes & outils utilisés</span>
+          <span class="tools-label" data-i18n="tools.label">Méthodes & outils utilisés</span>
           <div class="tools-list">
-            <div class="tool-item"><strong>BPMN 2.0</strong> — standard ISO pour modéliser graphiquement les processus métier : chaque étape, décision, rôle et exception est représenté avec un symbole normalisé</div>
-            <div class="tool-item"><strong>Draw.io</strong> — outil de diagrammes en ligne gratuit, particulièrement utilisé pour les diagrammes BPMN et les schémas d'architecture</div>
-            <div class="tool-item"><strong>ProcessMaker</strong> — plateforme BPM (Business Process Management) permettant d'automatiser des workflows à partir de modèles BPMN</div>
+            <div class="tool-item" data-i18n="p08.tool1"><strong>BPMN 2.0</strong> — standard ISO pour modéliser graphiquement les processus métier : chaque étape, décision, rôle et exception est représenté avec un symbole normalisé</div>
+            <div class="tool-item" data-i18n="p08.tool2"><strong>Draw.io</strong> — outil de diagrammes en ligne gratuit, particulièrement utilisé pour les diagrammes BPMN et les schémas d'architecture</div>
+            <div class="tool-item" data-i18n="p08.tool3"><strong>ProcessMaker</strong> — plateforme BPM (Business Process Management) permettant d'automatiser des workflows à partir de modèles BPMN</div>
           </div>
         </div>
 
         <div class="results">
-          <span class="res res-green">Spec RMA livrée pour ERPNext</span>
-          <span class="res res-amber">Flux terrain documenté</span>
-          <span class="res res-blue">Bypass niveau 0 intégré</span>
+          <span class="res res-green" data-i18n="p08.res1">Spec RMA livrée pour ERPNext</span>
+          <span class="res res-amber" data-i18n="p08.res2">Flux terrain documenté</span>
+          <span class="res res-blue" data-i18n="p08.res3">Bypass niveau 0 intégré</span>
         </div>
         <div class="techs">
           <span class="tech">BPMN 2.0</span><span class="tech">Draw.io</span><span class="tech">ProcessMaker</span><span class="tech">RMA</span>
@@ -952,94 +910,30 @@ nav {
 <div class="about-strip">
   <div class="about-inner">
     <div class="about-block">
-      <h3>Formation</h3>
+      <h3 data-i18n="about.edu.title">Formation</h3>
       <div class="edu-item">
-        <span class="edu-deg">Master 2 — Ingénierie des Systèmes Complexes</span>
-        <span class="edu-school">Université Paris-Saclay</span>
-        <span class="edu-year">2024 – 2026 · Diplômé juin 2026</span>
+        <span class="edu-deg" data-i18n="edu1.deg">Master 1 & Master 2 — Ingénierie des Systèmes Complexes - Parcours industriel</span>
+        <span class="edu-school" data-i18n="edu1.school">Université Paris-Saclay</span>
+        <span class="edu-year" data-i18n="edu1.year">2024 – 2026 · Diplômé juin 2026</span>
       </div>
       <div class="edu-item">
-        <span class="edu-deg">Licence & Master 1 — Génie Industriel</span>
-        <span class="edu-school">Université Paris-Saclay</span>
-        <span class="edu-year">2021 – 2024</span>
+        <span class="edu-deg" data-i18n="edu2.deg">Licence — Génie Industriel</span>
+        <span class="edu-school" data-i18n="edu2.school">Université Paris-Saclay</span>
+        <span class="edu-year" data-i18n="edu2.year">2021 – 2024</span>
       </div>
     </div>
     <div class="about-block">
-      <h3>Langues</h3>
+      <h3 data-i18n="about.lang.title">Langues</h3>
       <div class="lang-row">
-        <span class="lang-name">Français</span>
+        <span class="lang-name" data-i18n="lang.fr">Français</span>
         <div class="lang-bar"><div class="lang-fill full"></div></div>
-        <span class="lang-level">Natif</span>
+        <span class="lang-level" data-i18n="lang.fr.level">Natif</span>
       </div>
       <div class="lang-row">
-        <span class="lang-name">Anglais</span>
+        <span class="lang-name" data-i18n="lang.en">Anglais</span>
         <div class="lang-bar"><div class="lang-fill high"></div></div>
-        <span class="lang-level">Professionnel</span>
+        <span class="lang-level" data-i18n="lang.en.level">Professionnel</span>
       </div>
-      <div class="lang-row">
-        <span class="lang-name">Arabe</span>
-        <div class="lang-bar"><div class="lang-fill mid"></div></div>
-        <span class="lang-level">Courant</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<div class="section" id="competences">
-  <div class="section-header">
-    <span class="section-num">02</span>
-    <h2>Compétences</h2>
-    <div class="section-header-line"></div>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-card-icon icon-blue">⚙️</div>
-      <h4>Process Engineering</h4>
-      <p>
-        <span>BPMN</span> <span>VSM</span> <span>Lean</span> <span>Théorie des Contraintes</span>
-        <span>5 Pourquoi</span> <span>RMA</span> <span>Draw.io</span> <span>ProcessMaker</span>
-      </p>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon icon-green">📊</div>
-      <h4>Données & Simulation</h4>
-      <p>
-        <span>Python</span> <span>pandas</span> <span>scipy</span> <span>matplotlib</span>
-        <span>Excel / VBA</span> <span>Power Query</span> <span>Power BI</span> <span>Flexsim</span>
-      </p>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon icon-purple">💻</div>
-      <h4>Digital & Low-Code</h4>
-      <p>
-        <span>AppSheet</span> <span>Google Apps Script</span> <span>Base44</span>
-        <span>React</span> <span>Tailwind CSS</span> <span>ProcessMaker</span>
-      </p>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon icon-amber">🗄️</div>
-      <h4>ERP & Systèmes d'information</h4>
-      <p>
-        <span>ERPNext</span> <span>Matrix42</span> <span>Odoo</span>
-        <span>NetSuite</span> <span>Bright Pattern</span> <span>Docker</span>
-      </p>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon icon-blue">📱</div>
-      <h4>Développement mobile</h4>
-      <p>
-        <span>Android</span> <span>Kotlin</span> <span>ML Kit OCR</span>
-        <span>PdfRenderer</span> <span>Offline-first</span>
-      </p>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon icon-green">🤝</div>
-      <h4>Gestion de projet</h4>
-      <p>
-        <span>Coordination transverse</span> <span>Ateliers clients</span>
-        <span>UAT</span> <span>Conduite du changement</span> <span>Grand compte</span>
-      </p>
     </div>
   </div>
 </div>
@@ -1050,11 +944,345 @@ nav {
     <span class="footer-name">Imad BELFAR</span>
     <div class="footer-links">
       <a href="mailto:imad.belfar@email.com">imad.belfar@email.com</a>
-      <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank">LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/imad-belfar-5b41262aa/" target="_blank" data-i18n="footer.linkedin">LinkedIn ↗</a>
     </div>
-    <p class="footer-note">Disponible à partir de septembre 2026 · Paris & remote · Chaque projet ici a résolu un problème réel.</p>
+    <p class="footer-note" data-i18n="footer.note">Disponible à partir de septembre 2026 · Paris & remote</p>
   </div>
 </div>
 
+<script>
+  const translations = {
+    fr: {
+      "nav.projects": "Projets",
+      "nav.linkedin": "LinkedIn ↗",
+      "hero.eyebrow1": "Master 2 · Paris-Saclay · Ingénierie des Systèmes Complexes",
+      "hero.avail1": "Disponible septembre 2026",
+      "hero.avail2": "France et international (remote possible)",
+      "hero.title": "Ingénieur Industriel & <span>Qualité</span>",
+      "hero.intro": "Pendant 2 ans en alternance chez <strong>LIEM / Castles Technology</strong> — acteur mondial du <strong>B2B</strong> concevant les terminaux de paiement pour de grands comptes, tout en garantissant la continuité de service des marchands sur le terrain — j'ai résolu des problèmes opérationnels concrets et activement <strong>accompagné la transformation IT de l'entreprise</strong> : flux de production bloqués, briques logicielles manquantes, processus manuels chronophages. Du diagnostic terrain à la mise en production d'applications opérationnelles, j'ai piloté ces projets souvent <strong>en autonomie complète</strong> et sous forte contrainte de délai.",
+      "hero.ctx1.label": "Entreprise d'accueil",
+      "hero.ctx1.val": "Castles Technology / LIEM",
+      "hero.ctx2.label": "Secteur",
+      "hero.ctx2.val": "Industrie · Fintech · Paiement électronique",
+      "hero.ctx3.label": "Durée",
+      "hero.ctx3.val": "2 ans d'alternance (2024–2026)",
+      "hero.ctx4.label": "Formation",
+      "hero.ctx4.val": "Université Paris-Saclay",
+      "chip1": "Gestion de projet client",
+      "chip2": "Pilotage d'équipe",
+      "chip3": "Aide à la décision",
+      "chip4": "Process Engineering",
+      "chip5": "Transformation digitale",
+      "chip6": "Amélioration continue",
+      "hero.cta1": "Voir les projets →",
+      "hero.cta2": "LinkedIn ↗",
+      "hero.cta3": "✉ Contact",
+      "projects.title": "Projets réalisés",
+      "tools.label": "Méthodes & outils utilisés",
+      "about.edu.title": "Formation",
+      "about.lang.title": "Langues",
+      "lang.fr": "Français",
+      "lang.fr.level": "Natif",
+      "lang.en": "Anglais",
+      "lang.en.level": "Professionnel",
+      "footer.linkedin": "LinkedIn ↗",
+      "footer.note": "Disponible à partir de septembre 2026 · Paris & remote",
+
+      "edu1.deg": "Master 1 & Master 2 — Ingénierie des Systèmes Complexes - Parcours industriel",
+      "edu1.school": "Université Paris-Saclay",
+      "edu1.year": "2024 – 2026 · Diplômé juin 2026",
+      "edu2.deg": "Licence — Génie Industriel",
+      "edu2.school": "Université Paris-Saclay",
+      "edu2.year": "2021 – 2024",
+
+      "p01.num": "Projet 01 · Management opérationnel & pilotage d’activité",
+      "p01.badge": "BPCE + PennyLane · Responsabilité laboratoire",
+      "p01.title": "Prise en responsabilité d’un laboratoire sans manager — pilotage opérationnel, qualité et relation client",
+      "p01.hook": "\"Quand il n’y avait personne pour structurer l’activité, j’ai repris le pilotage du laboratoire.\"",
+      "p01.context": "<span class=\"pcard-context-label\">Contexte & enjeu · Évolution interne</span> <strong>Cette mission s’inscrit dans mon évolution au sein de Castles Technology :</strong> après avoir démontré mon autonomie sur des missions terrain, j’ai été désigné pour reprendre le pilotage d’un laboratoire stratégique <strong>sans manager dédié, avec une équipe de 7 techniciens</strong>. Le laboratoire regroupait plusieurs activités critiques pour <strong>BPCE (Banques Populaires / Caisses d’Épargne)</strong> et <strong>PennyLane (éditeur de logiciels comptables)</strong> : préparation/configurations de terminaux, assistance technique aux commerçants, gestion SAV et logistique. L’absence de responsable menaçait la continuité de service et le respect des SLA. J’ai donc assuré le <strong>management direct de l’équipe</strong> : affectation des ressources, suivi des performances individuelles et collectives, gestion des plannings, des absences et des primes variables.",
+      "p01.body": "J’ai assuré le <strong>pilotage quotidien</strong> du laboratoire : affectation des ressources selon les priorités, suivi des performances individuelles et collectives, gestion des escalades opérationnelles et communication directe avec les clients (comités de suivi, reportings SLA, qualité). J’ai également structuré plusieurs <strong>outils internes</strong> pour piloter l’activité en temps réel — notamment <strong>442Plan</strong>, une application web complète (React, Tailwind, Base44).<br><br><strong>442Plan</strong> centralise : dashboard temps réel (présence techniciens, interventions, compteurs de production), pointage digital remplaçant les feuilles papier, suivi RH (congés, absences), calcul automatique des primes variables et reporting client.<br><br>En parallèle, je gérais une partie de la <strong>facturation client</strong> liée aux prestations du laboratoire.",
+      "p01.tool1": "<strong>Pilotage opérationnel & management transverse</strong> — coordination d’une activité multi-clients sous contraintes SLA, sans lien hiérarchique direct",
+      "p01.tool2": "<strong>Reporting & KPI</strong> — suivi de performance, qualité, productivité, comités clients",
+      "p01.tool3": "<strong>Base44 (BaaS)</strong> — stack complète de l’application 442Plan (dashboard, pointage, primes, RH)",
+      "p01.tool4": "<strong>Gestion de la relation client</strong> — escalades, communication opérationnelle, reporting structuré",
+      "p01.res1": "Activité stabilisée sans interruption",
+      "p01.res2": "Respect des SLA",
+      "p01.res3": "Amélioration continue",
+      "p01.res4": "En production quotidienne",
+
+      "p02.num": "Projet 02 · Audit opérationnel & simulation",
+      "p02.badge": "Castles Technology - site Liem — Mission interne",
+      "p02.title": "Diagnostic du site de réparation de Vallery — la contrainte n'était pas là où tout le monde croyait",
+      "p02.hook": "\"Le vrai goulot d'étranglement était invisible aux yeux du management.\"",
+      "p02.context": "<span class=\"pcard-context-label\">Contexte & enjeu</span> <strong>Castles Technology répare des terminaux de paiement</strong> (les terminaux CB qu'on trouve chez les commerçants) sur son site de Vallery. Le site accumulait du retard, les délais contractuels (SLA) n'étaient plus tenus, et personne ne comprenait pourquoi. La direction EMEA a commandé un <strong>diagnostic d'urgence</strong>. Mission de 2 semaines, commandée directement par le Directeur des Opérations EMEA.",
+      "p02.body": "J'ai analysé l'ensemble des données de production, conduit des interviews terrain, et surtout <strong>suivi physiquement un lot de 40 terminaux</strong> poste par poste pour mesurer les temps réels (pas les temps théoriques). J'ai ensuite modélisé statistiquement ces données et construit des <strong>simulations d'ordonnancement</strong> (en Python et sur le logiciel Flexsim) pour tester différents scénarios de réallocation de ressources.<br><br>Le verdict était contre-intuitif : tout le monde pointait l'atelier de réparation comme cause du retard. En réalité, le <strong>goulot d'étranglement était la station d'injection de clés et de mise à jour logicielle</strong> — une étape technique obligatoire mais sous-dotée en capacité. Réallouer des ressources à cet endroit précis permettait de simuler une réduction de délai de 33%.",
+      "p02.tool1": "<strong>Théorie des Contraintes (TOC)</strong> — cadre d'analyse pour identifier le maillon limitant d'un système de production, popularisé par le livre \"Le But\"",
+      "p02.tool2": "<strong>Lean Manufacturing</strong> — méthode d'optimisation industrielle visant à éliminer les gaspillages",
+      "p02.tool3": "<strong>Python (pandas, scipy, matplotlib)</strong> — pour l'analyse statistique des données de temps de cycle et la construction des simulations",
+      "p02.tool4": "<strong>Simulation d'ordonnancement</strong> — modélisation informatique du flux de production pour tester des scénarios \"et si\" sans toucher à la ligne réelle",
+      "p02.res1": "−33% de délai simulé",
+      "p02.res2": "Réallocation capacité actionnée",
+      "p02.res3": "Présenté au EMEA Ops Director",
+
+      "p03.num": "Projet 03 · Système d'information & logistique",
+      "p03.badge": "myPOS — Fintech européenne, +500 000 clients commerçants",
+      "p03.title": "Système de gestion des commandes déployé dans 5 pays en 2 semaines",
+      "p03.hook": "\"Aucun outil prêt des deux côtés. Go-live dans 14 jours.\"",
+      "p03.context": "<span class=\"pcard-context-label\">Contexte & enjeu</span> <strong>myPOS est une fintech</strong> (entreprise de technologie financière) qui fournit des solutions de paiement aux commerçants en Europe. En tant que nouveau client de Castles Technology, myPOS devait lancer sa logistique de distribution de terminaux en France — sans avoir de système opérationnel en place côté client, et sans que Castles n'ait prévu d'outil dédié. <strong>Délai : 14 jours avant le premier vrai envoi de commandes.</strong>",
+      "p03.body": "J'ai évalué les options disponibles (développement custom, ERP existant, no-code), et choisi <strong>AppSheet</strong> — une plateforme low-code de Google permettant de créer des applications métier sans écrire beaucoup de code — pour sa rapidité de déploiement et sa flexibilité.<br><br>En deux semaines, j'ai conçu le <strong>modèle de données complet</strong>, un workflow de validation en 6 étapes (saisie commande → validation → préparation → expédition → livraison → facturation), des droits d'accès par rôle (opérateur, responsable, admin), la <strong>validation automatique des adresses</strong> via l'API Google Maps et la gestion des spécificités DOM-TOM (Guadeloupe, Martinique, etc.). L'application a été déployée progressivement dans 5 pays avec environ 20 utilisateurs (techniciens + responsables).",
+      "p03.tool1": "<strong>AppSheet (Google)</strong> — plateforme low-code permettant de créer des applications métier connectées à des bases de données, sans développement lourd",
+      "p03.res1": "Go-live J1 dans les délais",
+      "p03.res2": "5 pays · ~20 utilisateurs",
+      "p03.res3": "Workflows centralisés",
+
+      "p04.num": "Projet 04 · Projet grand compte · Chef de projet",
+      "p04.badge": "BNP Paribas — 1ère banque française, ~200 000 collaborateurs",
+      "p04.title": "CaSERV — Plateforme de service intégrée pour la gestion des terminaux des marchands",
+      "p04.hook": "\"Construire from scratch en 7 mois ce qui prend normalement 18.\"",
+      "p04.context": "<span class=\"pcard-context-label\">Contexte & enjeu</span> <strong>BNP Paribas Services Monétiques</strong> est la division de BNP qui gère les équipements de paiement (terminaux CB) de ses clients commerçants. Elle a confié à Castles Technology la gestion opérationnelle de son parc de <strong>60 000+ terminaux</strong> en France : réparations, remplacements, hotline, logistique. C'est un contrat majeur qui nécessitait de construire une plateforme de service complète — CaSERV — en intégrant une demi-douzaine de logiciels différents. Délai : 7 mois.",
+      "p04.body": "En rôle de <strong>chef de projet local</strong>, en appui du transition manager senior et en collaboration avec l'IT Leader basé au Royaume-Uni, j'ai coordonné l'ensemble des chantiers techniques et fonctionnels.<br><br>J'ai formalisé <strong>12 processus principaux en BPMN</strong> (langage de modélisation des processus métier, comme des organigrammes standardisés) couvrant tous les scénarios de service de bout en bout. J'ai participé à l'intégration de 5 systèmes : <strong>Matrix42</strong> (gestion des interventions et tickets), <strong>CasHub</strong> (portail client interne Castles), <strong>Chronopost</strong> (transport), <strong>Lemon Group</strong> (gestion des pièces détachées) et <strong>Bright Pattern</strong> (centre d'appels). J'ai également piloté les cycles UAT (tests de recette avec les utilisateurs finaux BNP) et configuré le centre d'appels 8 agents.",
+      "p04.tool1": "<strong>BPMN (Business Process Model & Notation)</strong> — standard international pour modéliser graphiquement les processus d'entreprise, comme un plan d'architecte pour les flux de travail",
+      "p04.tool2": "<strong>Matrix42</strong> — logiciel de gestion des actifs IT et des tickets de support (type \"ServiceNow\" pour le marché européen)",
+      "p04.tool3": "<strong>Bright Pattern</strong> — plateforme cloud de centre d'appels (omnicanal : téléphone, email, chat)",
+      "p04.tool4": "<strong>UAT (User Acceptance Testing)</strong> — phase de tests où les vrais utilisateurs valident que le système correspond à leurs besoins avant le go-live",
+      "p04.res1": "Go-live mai 2026",
+      "p04.res2": "12 processus BPMN livrés",
+      "p04.res3": "5 systèmes intégrés",
+      "p04.res4": "2 clients gérés",
+
+      "p05.num": "Projet 05 · Mission terrain internationale",
+      "p05.badge": "iNETcc — Centre d'appels partenaire BNP Paribas (Bucarest, Roumanie)",
+      "p05.title": "Audit sur site en Roumanie — Validation opérationnelle & transfert de bonnes pratiques",
+      "p05.hook": "\"On est venu vérifier. On est reparti avec 5 améliorations actionnées dès le lendemain.\"",
+      "p05.context": "<span class=\"pcard-context-label\">Contexte & enjeu</span> Dans le cadre du projet CaSERV (BNP Paribas), la hotline Castles a démarré en phase pilote afin de couvrir deux régions en France, avec la gestion des appels entrants et sortants. Les prévisions de charge pour le go-live national indiquaient toutefois une forte augmentation des volumes d’appels. Afin de sécuriser le dispositif et garantir la continuité de service, l’entreprise a fait appel à <strong>iNETcc</strong>, un prestataire spécialisé dans les centres d’appels basé en Roumanie, pour assurer un backup sur les appels sortants uniquement. Mission de <strong>4 jours à Bucarest.</strong>",
+      "p05.body": "Sur place, je me suis assuré que les agents soient bien aptes à échanger avec des commerçants français, qu’ils disposent des processus nécessaires, et qu’ils comprennent parfaitement les offres de notre client BNP Paribas. J’ai participé à l’amélioration des scripts téléphoniques existants en m’appuyant sur l’expérience terrain des agents, et j’ai vérifié que la procédure d’escalade vers notre hotline interne était bien comprise par tous.<br><br>J’ai également contrôlé le bon fonctionnement de leurs outils (Matrix42, Bright Pattern), m’assuré qu’ils étaient maîtrisés par les équipes, et que les comptes utilisateurs étaient créés dans les différents systèmes. Cette mission a permis de valider la montée en compétences opérationnelles du centre d’appels partenaire avant le lancement national.",
+      "p05.tool1": "<strong>Audit de processus</strong> — observation et évaluation structurée des pratiques réelles sur le terrain",
+      "p05.tool2": "<strong>Conduite du changement</strong> — accompagnement des équipes dans l'adoption de nouveaux outils et méthodes",
+      "p05.res1": "Agents validés opérationnels",
+      "p05.res2": "Outils fonctionnels",
+      "p05.res3": "Scripts d'appel améliorés",
+
+      "p06.num": "Projet 06 · Transformation SI & ERP",
+      "p06.badge": "Castles Technology — Mission interne",
+      "p06.title": "ERPNext — Proof of Concept pour remplacer le logiciel de gestion legacy OGI",
+      "p06.hook": "\"Comment faire rentrer la réparation de terminaux dans un ERP conçu pour la fabrication ?\"",
+      "p06.context": "<span class=\"pcard-context-label\">Contexte & enjeu</span> Un <strong>ERP (Enterprise Resource Planning)</strong> est le logiciel central d'une entreprise qui gère les stocks, les commandes, la facturation, les ressources humaines, etc. Le logiciel legacy <strong>OGI</strong> utilisé par Castles Technology était obsolète et bloquait la croissance. La direction IT a lancé un projet de remplacement. Problème : les ERP du marché sont conçus pour la fabrication (on sait quelles pièces entrent dans un produit avant de le fabriquer). Or, dans la <strong>réparation</strong> de terminaux, on ne sait quelles pièces remplacer qu'<em>après</em> avoir diagnostiqué l'appareil.",
+      "p06.body": "J'ai réalisé un <strong>benchmark de 4 ERP</strong> (ERPNext, Odoo, Sage, solution propriétaire) selon des critères techniques et fonctionnels, avec recommandation documentée. ERPNext (solution open-source) a été sélectionné.<br><br>Le défi principal : les <strong>BOMs (Bill of Materials, listes de composants)</strong> classiques exigent de déclarer les pièces nécessaires <em>avant</em> de commencer. J'ai trouvé la solution technique : un <strong>\"Phantom BOM\"</strong> (article fantôme) — une fonctionnalité d'ERPNext permettant de créer des ordres de fabrication/réparation sans composants prédéfinis, avec saisie des pièces effectivement consommées en fin d'intervention. J'ai déployé ERPNext en local via <strong>Docker</strong> pour le PoC, configuré le module RMA (Return Merchandise Authorization — gestion des retours produits), et livré une recommandation go/no-go au comité IT.",
+      "p06.tool1": "<strong>ERPNext</strong> — ERP open-source basé sur le framework Frappe, particulièrement utilisé par les PME industrielles",
+      "p06.tool2": "<strong>Docker</strong> — outil de conteneurisation permettant de déployer un environnement logiciel complet sur n'importe quelle machine",
+      "p06.tool3": "<strong>RMA (Return Merchandise Authorization)</strong> — processus standardisé de gestion des retours et réparations produits",
+      "p06.res1": "PoC validé",
+      "p06.res2": "Recommandation go/no-go livrée au comité IT",
+
+      "p07.num": "Projet 07 · Application mobile Android",
+      "p07.badge": "Castles Technology — Mission interne, enjeu qualité critique",
+      "p07.title": "ICCHI — Application Android de contrôle qualité par OCR, 100% hors-ligne",
+      "p07.hook": "\"Les données financières ne quittent jamais l'appareil — contrainte non négociable dans le paiement.\"",
+      "p07.context": "<span class=\"pcard-context-label\">Contexte & enjeu</span> En 2024, des <strong>inversions de terminaux</strong> surviennent lors des reconditionnements : un terminal destiné à un client A est expédié au client B. Dans le domaine du paiement électronique, c'est un incident grave — les terminaux contiennent des configurations financières sensibles. Chaque erreur entraîne un <strong>reconditionnement coûteux</strong> (retour, effacement, reconfiguration, réexpédition) et une rupture de confiance client.",
+      "p07.body": "J'ai développé une <strong>application Android native en Kotlin</strong> (le langage officiel pour Android) qui fonctionne intégralement en mode hors-ligne. L'application :<br><br>1. Extrait les données du <strong>PDF de mission</strong> (bon de commande client) via PdfRenderer<br>2. Lit les <strong>photos du ticket imprimé</strong> par le terminal via ML Kit OCR (reconnaissance optique de caractères de Google, tournant localement sur l'appareil)<br>3. <strong>Recoupe les deux sources</strong> via un dictionnaire de synonymes (un numéro peut s'écrire de plusieurs façons selon le modèle)<br>4. Affiche instantanément une validation ✓ ou une alerte ✗ à l'opérateur<br><br>5. Enregistre une trace locale de chaque contrôle pour audit et amélioration continue.",
+      "p07.tool1": "<strong>Kotlin</strong> — langage de programmation moderne pour Android, recommandé par Google depuis 2017",
+      "p07.tool2": "<strong>ML Kit OCR (Google)</strong> — bibliothèque d'intelligence artificielle embarquée permettant de lire du texte dans des images, sans réseau",
+      "p07.res1": "97,5% de précision (39/40 terminaux)",
+      "p07.res2": "Tracabilité des opérations de controle",
+      "p07.res3": "Stress et fatigue opérateur éliminée",
+
+      "p08.num": "Projet 08 · Optimisation & modélisation de processus",
+      "p08.badge": "Castles Technology — Mission interne",
+      "p08.title": "Refonte du processus RMA — Modélisation BPMN & spécification pour l'ERP futur",
+      "p08.hook": "\"25 minutes de saisie pour 4 réparations simples. Le vrai problème était dans la conception du flux.\"",
+      "p08.context": "<span class=\"pcard-context-label\">Contexte & enjeu</span> Le <strong>processus RMA (Return Merchandise Authorization)</strong> est la procédure standard pour gérer les retours de produits défectueux : réception, diagnostic, réparation ou échange, renvoi au client. Chez Castles, ce processus prenait beaucoup trop de temps et comportait de nombreuses étapes manuelles redondantes. De plus, sa modélisation précise était nécessaire pour servir de <strong>spécification fonctionnelle au futur module RMA d'ERPNext</strong>.",
+      "p08.body": "J'ai d'abord cartographié le <strong>flux terrain réel</strong> (pas le théorique, qui divergeait souvent) en observant les opérations et en interviewant sur les cas dérogatoires. Résultat : le modèle officiel ne prenait pas en compte un <strong>bypass niveau 0</strong> (pour les échanges standards simples, pas besoin de passer par toutes les étapes) ni les <strong>boucles de rétroaction</strong> quand un défaut est découvert en cours de nettoyage ou lors des tests finaux.<br><br>J'ai modélisé le processus complet en <strong>BPMN</strong> avec tous les chemins alternatifs, décisions et exceptions.",
+      "p08.tool1": "<strong>BPMN 2.0</strong> — standard ISO pour modéliser graphiquement les processus métier : chaque étape, décision, rôle et exception est représenté avec un symbole normalisé",
+      "p08.tool2": "<strong>Draw.io</strong> — outil de diagrammes en ligne gratuit, particulièrement utilisé pour les diagrammes BPMN et les schémas d'architecture",
+      "p08.tool3": "<strong>ProcessMaker</strong> — plateforme BPM (Business Process Management) permettant d'automatiser des workflows à partir de modèles BPMN",
+      "p08.res1": "Spec RMA livrée pour ERPNext",
+      "p08.res2": "Flux terrain documenté",
+      "p08.res3": "Bypass niveau 0 intégré"
+    },
+    en: {}
+  };
+
+  // Auto-generate english translations by deep copy then manual override for brevity (we'll manually fill key english equivalents)
+  // For conciseness, we'll directly define english mapping using the same keys.
+  const en = {
+    "nav.projects": "Projects",
+    "nav.linkedin": "LinkedIn ↗",
+    "hero.eyebrow1": "Master 2 · Paris-Saclay · Complex Systems Engineering",
+    "hero.avail1": "Available September 2026",
+    "hero.avail2": "France & international (remote possible)",
+    "hero.title": "Industrial & <span>Quality</span> Engineer",
+    "hero.intro": "During my 2-year apprenticeship at <strong>LIEM / Castles Technology</strong> — a global <strong>B2B</strong> player designing payment terminals for large accounts while ensuring merchant service continuity on the ground — I solved concrete operational problems and actively <strong>supported the company's IT transformation</strong>: blocked production flows, missing software components, time-consuming manual processes. From field diagnosis to deploying operational applications, I led these projects often <strong>fully autonomously</strong> under tight deadlines.",
+    "hero.ctx1.label": "Host company",
+    "hero.ctx1.val": "Castles Technology / LIEM",
+    "hero.ctx2.label": "Sector",
+    "hero.ctx2.val": "Industry · Fintech · Electronic Payments",
+    "hero.ctx3.label": "Duration",
+    "hero.ctx3.val": "2-year apprenticeship (2024–2026)",
+    "hero.ctx4.label": "Education",
+    "hero.ctx4.val": "Université Paris-Saclay",
+    "chip1": "Client project management",
+    "chip2": "Team leadership",
+    "chip3": "Decision support",
+    "chip4": "Process Engineering",
+    "chip5": "Digital transformation",
+    "chip6": "Continuous improvement",
+    "hero.cta1": "View projects →",
+    "hero.cta2": "LinkedIn ↗",
+    "hero.cta3": "✉ Contact",
+    "projects.title": "Selected projects",
+    "tools.label": "Methods & tools used",
+    "about.edu.title": "Education",
+    "about.lang.title": "Languages",
+    "lang.fr": "French",
+    "lang.fr.level": "Native",
+    "lang.en": "English",
+    "lang.en.level": "Professional",
+    "footer.linkedin": "LinkedIn ↗",
+    "footer.note": "Available from September 2026 · Paris & remote",
+
+    "edu1.deg": "Master 1 & Master 2 — Complex Systems Engineering - Industrial track",
+    "edu1.school": "Université Paris-Saclay",
+    "edu1.year": "2024 – 2026 · Graduating June 2026",
+    "edu2.deg": "Bachelor's Degree — Industrial Engineering",
+    "edu2.school": "Université Paris-Saclay",
+    "edu2.year": "2021 – 2024",
+
+    "p01.num": "Project 01 · Operational management & activity steering",
+    "p01.badge": "BPCE + PennyLane · Lab responsibility",
+    "p01.title": "Taking over a lab without a manager — operational management, quality & client relations",
+    "p01.hook": "\"When there was no one to structure the activity, I took over the lab management.\"",
+    "p01.context": "<span class=\"pcard-context-label\">Context & stakes · Internal evolution</span> <strong>This mission is part of my growth within Castles Technology:</strong> after proving my autonomy on field missions, I was assigned to take over a strategic lab <strong>without a dedicated manager, with a team of 7 technicians</strong>. The lab handled critical activities for <strong>BPCE (Banques Populaires / Caisses d’Épargne)</strong> and <strong>PennyLane (accounting software editor)</strong>: terminal preparation/configurations, merchant technical support, after-sales and logistics. The lack of a manager threatened service continuity and SLA compliance. I thus ensured <strong>direct team management</strong>: resource allocation, individual/team performance tracking, schedule/absence management and variable bonuses.",
+    "p01.body": "I ensured the <strong>daily management</strong> of the lab: resource allocation based on priorities, individual and collective performance tracking, operational escalation management and direct client communication (review committees, SLA reporting, quality). I also structured several <strong>internal tools</strong> to steer activity in real-time — including <strong>442Plan</strong>, a full web application (React, Tailwind, Base44).<br><br><strong>442Plan</strong> centralizes: real-time dashboard (technician presence, interventions, production counters), digital time tracking replacing paper sheets, HR monitoring (leave, absences), automatic variable bonus calculation and client reporting.<br><br>In parallel, I managed part of the <strong>client invoicing</strong> related to lab services.",
+    "p01.tool1": "<strong>Operational management & cross-functional leadership</strong> — coordinating multi-client activities under SLA constraints without direct hierarchical link",
+    "p01.tool2": "<strong>Reporting & KPIs</strong> — performance, quality, productivity tracking, client committees",
+    "p01.tool3": "<strong>Base44 (BaaS)</strong> — full stack for 442Plan app (dashboard, time tracking, bonuses, HR)",
+    "p01.tool4": "<strong>Client relationship management</strong> — escalations, operational communication, structured reporting",
+    "p01.res1": "Stabilized activity with no interruption",
+    "p01.res2": "SLA compliance",
+    "p01.res3": "Continuous improvement",
+    "p01.res4": "In daily production",
+
+    "p02.num": "Project 02 · Operational audit & simulation",
+    "p02.badge": "Castles Technology - Liem site — Internal mission",
+    "p02.title": "Diagnosing the Vallery repair site — the constraint wasn't where everyone thought",
+    "p02.hook": "\"The real bottleneck was invisible to management.\"",
+    "p02.context": "<span class=\"pcard-context-label\">Context & stakes</span> <strong>Castles Technology repairs payment terminals</strong> (the card terminals found in shops) at its Vallery site. The site was falling behind, contractual SLAs were no longer met, and no one understood why. EMEA management ordered an <strong>emergency diagnosis</strong>. 2‑week mission, directly commissioned by the EMEA Operations Director.",
+    "p02.body": "I analyzed all production data, conducted field interviews, and above all <strong>physically tracked a batch of 40 terminals</strong> station by station to measure real times (not theoretical ones). I then statistically modeled the data and built <strong>scheduling simulations</strong> (in Python and Flexsim software) to test different resource reallocation scenarios.<br><br>The verdict was counterintuitive: everyone pointed to the repair workshop as the cause of delays. In reality, the <strong>bottleneck was the key injection and software update station</strong> — a mandatory technical step but under‑resourced. Reallocating resources to that specific station simulated a 33% lead time reduction.",
+    "p02.tool1": "<strong>Theory of Constraints (TOC)</strong> — analysis framework to identify the limiting link in a production system, popularized by the book \"The Goal\"",
+    "p02.tool2": "<strong>Lean Manufacturing</strong> — industrial optimization method to eliminate waste",
+    "p02.tool3": "<strong>Python (pandas, scipy, matplotlib)</strong> — for statistical analysis of cycle time data and building simulations",
+    "p02.tool4": "<strong>Scheduling simulation</strong> — computer modeling of production flow to test \"what‑if\" scenarios without touching the real line",
+    "p02.res1": "−33% simulated lead time",
+    "p02.res2": "Capacity reallocation implemented",
+    "p02.res3": "Presented to EMEA Ops Director",
+
+    "p03.num": "Project 03 · Information system & logistics",
+    "p03.badge": "myPOS — European fintech, +500,000 merchant clients",
+    "p03.title": "Order management system deployed in 5 countries within 2 weeks",
+    "p03.hook": "\"No tool ready on either side. Go‑live in 14 days.\"",
+    "p03.context": "<span class=\"pcard-context-label\">Context & stakes</span> <strong>myPOS is a fintech</strong> (financial technology company) that provides payment solutions to merchants across Europe. As a new customer of Castles Technology, myPOS needed to launch its terminal distribution logistics in France — with no operational system on the client side, and no dedicated tool planned at Castles. <strong>Deadline: 14 days before the first actual order shipment.</strong>",
+    "p03.body": "I evaluated available options (custom development, existing ERP, no‑code) and chose <strong>AppSheet</strong> — a Google low‑code platform to build business apps without heavy coding — for its speed and flexibility.<br><br>In two weeks, I designed the <strong>complete data model</strong>, a 6‑step validation workflow (order entry → validation → preparation → shipping → delivery → invoicing), role‑based access rights (operator, manager, admin), <strong>automatic address validation</strong> via Google Maps API, and management of DOM‑TOM specificities (Guadeloupe, Martinique, etc.). The app was progressively deployed in 5 countries with around 20 users (technicians + managers).",
+    "p03.tool1": "<strong>AppSheet (Google)</strong> — low‑code platform to build business apps connected to databases, without heavy development",
+    "p03.res1": "Go‑live on time",
+    "p03.res2": "5 countries · ~20 users",
+    "p03.res3": "Centralized workflows",
+
+    "p04.num": "Project 04 · Major account project · Project manager",
+    "p04.badge": "BNP Paribas — France's leading bank, ~200,000 employees",
+    "p04.title": "CaSERV — Integrated service platform for merchant terminal management",
+    "p04.hook": "\"Build from scratch in 7 months what normally takes 18.\"",
+    "p04.context": "<span class=\"pcard-context-label\">Context & stakes</span> <strong>BNP Paribas Services Monétiques</strong> is the BNP division that manages payment equipment (card terminals) for its merchant clients. It entrusted Castles Technology with the operational management of its <strong>60,000+ terminal fleet</strong> in France: repairs, replacements, hotline, logistics. This major contract required building a comprehensive service platform — CaSERV — integrating half a dozen different software systems. Deadline: 7 months.",
+    "p04.body": "As <strong>local project manager</strong>, supporting the senior transition manager and collaborating with the IT Leader based in the UK, I coordinated all technical and functional workstreams.<br><br>I formalized <strong>12 core processes in BPMN</strong> (business process modeling language, like standardized flowcharts) covering all end‑to‑end service scenarios. I participated in the integration of 5 systems: <strong>Matrix42</strong> (ticket & intervention management), <strong>CasHub</strong> (internal Castles client portal), <strong>Chronopost</strong> (shipping), <strong>Lemon Group</strong> (spare parts management) and <strong>Bright Pattern</strong> (call center). I also led UAT cycles (user acceptance testing with BNP end users) and configured the 8‑agent call center.",
+    "p04.tool1": "<strong>BPMN (Business Process Model & Notation)</strong> — international standard to graphically model business processes, like an architect's plan for workflows",
+    "p04.tool2": "<strong>Matrix42</strong> — IT asset management and support ticketing software (European equivalent of ServiceNow)",
+    "p04.tool3": "<strong>Bright Pattern</strong> — cloud call center platform (omnichannel: phone, email, chat)",
+    "p04.tool4": "<strong>UAT (User Acceptance Testing)</strong> — testing phase where real users validate that the system meets their needs before go‑live",
+    "p04.res1": "Go‑live May 2026",
+    "p04.res2": "12 BPMN processes delivered",
+    "p04.res3": "5 systems integrated",
+    "p04.res4": "2 clients managed",
+
+    "p05.num": "Project 05 · International on‑site mission",
+    "p05.badge": "iNETcc — BNP Paribas partner call center (Bucharest, Romania)",
+    "p05.title": "On‑site audit in Romania — Operational validation & best practices transfer",
+    "p05.hook": "\"We came to verify. We left with 5 improvements actioned the next day.\"",
+    "p05.context": "<span class=\"pcard-context-label\">Context & stakes</span> As part of the CaSERV project (BNP Paribas), the Castles hotline started in pilot phase covering two regions in France, handling inbound and outbound calls. However, load forecasts for the national go‑live indicated a sharp increase in call volumes. To secure the setup and ensure service continuity, the company engaged <strong>iNETcc</strong>, a specialized call center provider based in Romania, to provide backup for outbound calls only. <strong>4‑day mission in Bucharest.</strong>",
+    "p05.body": "On site, I ensured agents were able to communicate effectively with French merchants, had the necessary processes, and fully understood our client BNP Paribas's offerings. I helped improve existing phone scripts based on agents' field experience, and verified that the escalation procedure to our internal hotline was clearly understood by everyone.<br><br>I also checked the proper functioning of their tools (Matrix42, Bright Pattern), ensured the teams were proficient, and that user accounts were created in the various systems. This mission validated the operational readiness of the partner call center before the national launch.",
+    "p05.tool1": "<strong>Process auditing</strong> — structured observation and evaluation of real‑world practices",
+    "p05.tool2": "<strong>Change management</strong> — supporting teams in adopting new tools and methods",
+    "p05.res1": "Agents validated as operational",
+    "p05.res2": "Tools functional",
+    "p05.res3": "Call scripts improved",
+
+    "p06.num": "Project 06 · IS & ERP transformation",
+    "p06.badge": "Castles Technology — Internal mission",
+    "p06.title": "ERPNext — Proof of Concept to replace the legacy OGI management software",
+    "p06.hook": "\"How to fit terminal repair into an ERP designed for manufacturing?\"",
+    "p06.context": "<span class=\"pcard-context-label\">Context & stakes</span> An <strong>ERP (Enterprise Resource Planning)</strong> is a company's core software managing inventory, orders, invoicing, HR, etc. The legacy <strong>OGI</strong> software used by Castles Technology was outdated and hindering growth. IT management launched a replacement project. Problem: market ERPs are designed for manufacturing (you know which components go into a product before building it). However, in terminal <strong>repair</strong>, you don't know which parts to replace until <em>after</em> diagnosing the device.",
+    "p06.body": "I conducted a <strong>benchmark of 4 ERPs</strong> (ERPNext, Odoo, Sage, proprietary solution) based on technical and functional criteria, with a documented recommendation. ERPNext (open‑source solution) was selected.<br><br>The main challenge: classic <strong>BOMs (Bill of Materials)</strong> require declaring the necessary parts <em>before</em> starting. I found the technical solution: a <strong>\"Phantom BOM\"</strong> — an ERPNext feature allowing the creation of manufacturing/repair orders without predefined components, with parts entered after the intervention based on actual consumption. I deployed ERPNext locally via <strong>Docker</strong> for the PoC, configured the RMA module (Return Merchandise Authorization), and delivered a go/no‑go recommendation to the IT committee.",
+    "p06.tool1": "<strong>ERPNext</strong> — open‑source ERP based on the Frappe framework, particularly used by industrial SMEs",
+    "p06.tool2": "<strong>Docker</strong> — containerization tool to deploy a complete software environment on any machine",
+    "p06.tool3": "<strong>RMA (Return Merchandise Authorization)</strong> — standardized process for product returns and repairs",
+    "p06.res1": "PoC validated",
+    "p06.res2": "Go/no‑go recommendation delivered to IT committee",
+
+    "p07.num": "Project 07 · Android mobile application",
+    "p07.badge": "Castles Technology — Internal mission, critical quality issue",
+    "p07.title": "ICCHI — Offline quality control Android app using OCR, 100% offline",
+    "p07.hook": "\"Financial data never leaves the device — non‑negotiable constraint in payments.\"",
+    "p07.context": "<span class=\"pcard-context-label\">Context & stakes</span> In 2024, <strong>terminal mix‑ups</strong> occurred during refurbishment: a terminal destined for client A was shipped to client B. In electronic payments, this is a serious incident — terminals contain sensitive financial configurations. Each error leads to <strong>costly re‑processing</strong> (return, wipe, reconfiguration, re‑shipment) and loss of client trust.",
+    "p07.body": "I developed a <strong>native Android application in Kotlin</strong> (official Android language) that works entirely offline. The app:<br><br>1. Extracts data from the <strong>mission PDF</strong> (client purchase order) via PdfRenderer<br>2. Reads <strong>photos of the ticket printed by the terminal</strong> using ML Kit OCR (Google's on‑device optical character recognition)<br>3. <strong>Cross‑references both sources</strong> using a synonym dictionary (a number can be written in different ways depending on the model)<br>4. Instantly displays a validation ✓ or an alert ✗ to the operator<br><br>5. Logs each check locally for audit and continuous improvement.",
+    "p07.tool1": "<strong>Kotlin</strong> — modern programming language for Android, recommended by Google since 2017",
+    "p07.tool2": "<strong>ML Kit OCR (Google)</strong> — embedded AI library to read text from images, without network",
+    "p07.res1": "97.5% accuracy (39/40 terminals)",
+    "p07.res2": "Traceability of control operations",
+    "p07.res3": "Operator stress and fatigue eliminated",
+
+    "p08.num": "Project 08 · Process optimization & modeling",
+    "p08.badge": "Castles Technology — Internal mission",
+    "p08.title": "RMA process redesign — BPMN modeling & specification for the future ERP",
+    "p08.hook": "\"25 minutes of data entry for 4 simple repairs. The real problem was in the flow design.\"",
+    "p08.context": "<span class=\"pcard-context-label\">Context & stakes</span> The <strong>RMA process (Return Merchandise Authorization)</strong> is the standard procedure for managing defective product returns: reception, diagnosis, repair or exchange, return to client. At Castles, this process was taking far too long and involved many redundant manual steps. Moreover, precise modeling was required to serve as <strong>functional specification for the future ERPNext RMA module</strong>.",
+    "p08.body": "I first mapped the <strong>actual field flow</strong> (not the theoretical one, which often diverged) by observing operations and interviewing on exception cases. Result: the official model did not account for a <strong>level‑0 bypass</strong> (for simple standard exchanges, not needing all steps) nor <strong>feedback loops</strong> when a defect was discovered during cleaning or final testing.<br><br>I modeled the complete process in <strong>BPMN</strong> with all alternate paths, decisions and exceptions.",
+    "p08.tool1": "<strong>BPMN 2.0</strong> — ISO standard to graphically model business processes: each step, decision, role and exception is represented with a standardized symbol",
+    "p08.tool2": "<strong>Draw.io</strong> — free online diagramming tool, especially used for BPMN diagrams and architecture schemas",
+    "p08.tool3": "<strong>ProcessMaker</strong> — BPM (Business Process Management) platform to automate workflows from BPMN models",
+    "p08.res1": "RMA spec delivered for ERPNext",
+    "p08.res2": "Field flow documented",
+    "p08.res3": "Level‑0 bypass integrated"
+  };
+  translations.en = en;
+
+  let currentLang = 'fr';
+  function setLanguage(lang) {
+    currentLang = lang;
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = translations[lang]?.[key];
+      if (translation !== undefined) {
+        if (el.innerHTML && translation.includes('<') && (key.startsWith('hero.title') || key.startsWith('hero.intro') || key.includes('context') || key.includes('body') || key.includes('tool') || translation.includes('<strong>'))) {
+          el.innerHTML = translation;
+        } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.value = translation;
+        } else {
+          el.innerHTML = translation;
+        }
+      }
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
+      else btn.classList.remove('active');
+    });
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      setLanguage(lang);
+    });
+  });
+  setLanguage('fr');
+</script>
 </body>
 </html>
