@@ -128,7 +128,7 @@ nav {
 }
 .hero-name em {
   font-style: italic; font-weight: 400;
-  color: var(--copper);
+  color: var(--steel);
 }
 .hero-title {
   font-size: 14px; font-weight: 500;
@@ -142,7 +142,7 @@ nav {
   max-width: 700px; line-height: 1.9;
   margin-bottom: 2.5rem;
   padding-left: 1.25rem;
-  border-left: 2px solid var(--copper);
+  border-left: 2px solid var(--steel);
 }
 .hero-intro strong { color: var(--ink); font-weight: 600; }
 
@@ -173,12 +173,12 @@ nav {
 .btn-ghost:hover { border-color: var(--ink2); color: var(--ink); text-decoration: none; }
 .btn-copper {
   display: inline-flex; align-items: center; gap: .4rem;
-  background: var(--copper); color: #fff;
+  background: #0D4A7A; color: #fff;
   padding: .7rem 1.4rem; border-radius: 6px;
   font-size: 13.5px; font-weight: 500; text-decoration: none;
   transition: background .15s;
 }
-.btn-copper:hover { background: #a0501f; text-decoration: none; }
+.btn-copper:hover { background: #093A60; text-decoration: none; }
 
 /* SECTIONS */
 .section { padding: 5rem 4rem; max-width: 960px; margin: 0 auto; }
@@ -186,13 +186,13 @@ nav {
 .section-label {
   font-family: 'DM Mono', monospace;
   font-size: 10.5px; font-weight: 500; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--copper);
+  text-transform: uppercase; color: var(--steel);
   display: flex; align-items: center; gap: .75rem;
   margin-bottom: .6rem;
 }
 .section-label::after {
   content: ''; flex: 1; max-width: 40px; height: 1px;
-  background: var(--copper-mid);
+  background: var(--steel-mid);
 }
 .section-title {
   font-family: 'Fraunces', serif;
@@ -214,7 +214,7 @@ nav {
 
 .pcard-accent { height: 2px; }
 .acc-steel  { background: var(--steel); }
-.acc-copper { background: var(--copper); }
+.acc-copper { background: #1A6BAA; }
 .acc-green  { background: var(--green); }
 .acc-amber  { background: #B85A00; }
 .acc-gray   { background: #6A6A62; }
@@ -238,7 +238,7 @@ nav {
   white-space: nowrap; letter-spacing: .01em;
 }
 .badge-steel  { background: var(--steel-light); color: var(--steel); border: 1px solid var(--steel-mid); }
-.badge-copper { background: var(--copper-light); color: var(--copper); border: 1px solid var(--copper-mid); }
+.badge-copper { background: var(--copper-light); color: var(--steel); border: 1px solid var(--copper-mid); }
 .badge-green  { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
 .badge-amber  { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
 .badge-gray   { background: var(--gray-bg); color: #4A4A45; border: 1px solid var(--gray-border); }
@@ -250,7 +250,7 @@ nav {
   letter-spacing: -0.02em; line-height: 1.3;
 }
 .pcard-hook {
-  font-size: 13.5px; color: var(--copper);
+  font-size: 13.5px; color: var(--steel);
   font-style: italic; margin-bottom: 1.25rem;
   font-family: 'Fraunces', serif;
 }
@@ -291,7 +291,7 @@ nav {
   display: flex; gap: .5rem; align-items: flex-start;
   line-height: 1.55;
 }
-.tool-item::before { content: "›"; color: var(--copper); flex-shrink: 0; font-size: 14px; }
+.tool-item::before { content: "›"; color: var(--steel); flex-shrink: 0; font-size: 14px; }
 
 .results { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
 .res {
@@ -302,7 +302,7 @@ nav {
 .res-green  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-border); }
 .res-amber  { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-border); }
 .res-steel  { background: var(--steel-light); color: var(--steel); border: 1px solid var(--steel-mid); }
-.res-copper { background: var(--copper-light); color: var(--copper); border: 1px solid var(--copper-mid); }
+.res-copper { background: var(--copper-light); color: var(--steel); border: 1px solid var(--copper-mid); }
 .res-gray   { background: var(--gray-bg); color: #4A4A45; border: 1px solid var(--gray-border); }
 
 .techs { display: flex; flex-wrap: wrap; gap: .3rem; }
@@ -470,20 +470,53 @@ footer {
 
     <h1 class="hero-name">Imad <em>BELFAR</em></h1>
     <p class="hero-title" data-i18n="hero.title">Ingénieur Méthodes & Industrialisation · Management Opérationnel · Gestion de Projet</p>
-
-    <p style="font-family:'DM Mono',monospace;font-size:11.5px;font-weight:500;color:var(--copper);letter-spacing:.04em;margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem;"><span style="width:20px;height:1.5px;background:var(--copper);display:inline-block;flex-shrink:0;"></span><span data-i18n="hero.target">Cible prioritaire : Chef de Projet Industriel · Ingénieur Méthodes & Industrialisation · Grand groupe ou ETI · Île-de-France · Ouvert à l'international</span></p>
-
     <p class="hero-intro" data-i18n="hero.intro">
       Ingénieur industriel M2 Paris-Saclay, mon profil se distingue par une <strong>maîtrise transversale du génie industriel</strong> — du terrain à la direction, de la machine au projet — applicable en grand groupe, PME ou cabinet de conseil. En alternance, j'ai pris en charge des missions à responsabilités réelles : <strong>manager d'équipe sur 2 dossiers clients</strong>, audit de flux commandé par une direction EMEA, participation au COPIL d'un projet SI pour BNP Paribas, et mission terrain en Roumanie. En parallèle, j'ai développé 3 outils métier aujourd'hui en production.
     </p>
 
-    <div class="hero-chips">
-      <span class="chip" data-i18n="chip1">Méthodes & Industrialisation</span>
-      <span class="chip" data-i18n="chip2">Management opérationnel</span>
-      <span class="chip" data-i18n="chip3">Gestion de projet</span>
-      <span class="chip" data-i18n="chip4">Amélioration continue</span>
-      <span class="chip" data-i18n="chip5">Simulation de flux</span>
-      <span class="chip" data-i18n="chip6">Procédés de fabrication</span>
+    <!-- RADAR -->
+    <div style="margin-bottom:2.5rem;background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;max-width:700px;">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;" data-i18n="radar.title">Profil de compétences</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:1rem;font-style:italic;" data-i18n="radar.note">Compétences issues de la formation et de l'expérience terrain — certaines encore en attente d'une première mise en pratique professionnelle.</p>
+      <svg width="100%" viewBox="0 0 480 350" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:520px;" id="radar-svg">
+        <polygon points="240.0,147.5 259.4,155.6 267.5,175.0 259.4,194.4 240.0,202.5 220.6,194.4 212.5,175.0 220.6,155.6" fill="none" stroke="#E4E2DC" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <polygon points="240.0,120.0 278.9,136.1 295.0,175.0 278.9,213.9 240.0,230.0 201.1,213.9 185.0,175.0 201.1,136.1" fill="none" stroke="#E4E2DC" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <polygon points="240.0,92.5 298.3,116.7 322.5,175.0 298.3,233.3 240.0,257.5 181.7,233.3 157.5,175.0 181.7,116.7" fill="none" stroke="#E4E2DC" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <polygon points="240.0,65.0 317.8,97.2 350.0,175.0 317.8,252.8 240.0,285.0 162.2,252.8 130.0,175.0 162.2,97.2" fill="none" stroke="#E4E2DC" stroke-width="1"/>
+        <line x1="240" y1="175" x2="240.0" y2="65.0" stroke="#E4E2DC" stroke-width="0.5"/>
+        <line x1="240" y1="175" x2="317.8" y2="97.2" stroke="#E4E2DC" stroke-width="0.5"/>
+        <line x1="240" y1="175" x2="350.0" y2="175.0" stroke="#E4E2DC" stroke-width="0.5"/>
+        <line x1="240" y1="175" x2="317.8" y2="252.8" stroke="#E4E2DC" stroke-width="0.5"/>
+        <line x1="240" y1="175" x2="240.0" y2="285.0" stroke="#E4E2DC" stroke-width="0.5"/>
+        <line x1="240" y1="175" x2="162.2" y2="252.8" stroke="#E4E2DC" stroke-width="0.5"/>
+        <line x1="240" y1="175" x2="130.0" y2="175.0" stroke="#E4E2DC" stroke-width="0.5"/>
+        <line x1="240" y1="175" x2="162.2" y2="97.2" stroke="#E4E2DC" stroke-width="0.5"/>
+        <polygon points="240.0,65.0 317.8,97.2 350.0,175.0 302.2,237.2 240.0,252.0 185.6,229.4 163.0,175.0 208.9,143.9" fill="rgba(26,74,140,0.12)" stroke="#1A4A8C" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="240.0" cy="65.0" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="317.8" cy="97.2" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="350.0" cy="175.0" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="302.2" cy="237.2" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="240.0" cy="252.0" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="185.6" cy="229.4" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="163.0" cy="175.0" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="208.9" cy="143.9" r="4.5" fill="#1A4A8C" stroke="#fff" stroke-width="1.5"/>
+        <text x="240.0" y="37.0" text-anchor="middle" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="0" data-radar-line="0">Gestion</text>
+        <text x="240.0" y="49.0" text-anchor="middle" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="0" data-radar-line="1">de projet</text>
+        <text x="333.3" y="75.7" text-anchor="start" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="1" data-radar-line="0">Méthodes &amp;</text>
+        <text x="333.3" y="87.7" text-anchor="start" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="1" data-radar-line="1">Industrialisation</text>
+        <text x="372.0" y="169.0" text-anchor="start" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="2" data-radar-line="0">Dimensionnement</text>
+        <text x="372.0" y="181.0" text-anchor="start" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="2" data-radar-line="1">&amp; Simulation</text>
+        <text x="333.3" y="262.3" text-anchor="start" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="3" data-radar-line="0">Amélioration</text>
+        <text x="333.3" y="274.3" text-anchor="start" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="3" data-radar-line="1">continue</text>
+        <text x="240.0" y="301.0" text-anchor="middle" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="4" data-radar-line="0">Pilotage</text>
+        <text x="240.0" y="313.0" text-anchor="middle" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="4" data-radar-line="1">opérationnel</text>
+        <text x="146.7" y="262.3" text-anchor="end" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="5" data-radar-line="0">Data &amp;</text>
+        <text x="146.7" y="274.3" text-anchor="end" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="5" data-radar-line="1">Analyse</text>
+        <text x="108.0" y="169.0" text-anchor="end" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="6" data-radar-line="0">SI &amp; Transfo.</text>
+        <text x="108.0" y="181.0" text-anchor="end" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="6" data-radar-line="1">digitale</text>
+        <text x="146.7" y="75.7" text-anchor="end" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="7" data-radar-line="0">Robotique &amp;</text>
+        <text x="146.7" y="87.7" text-anchor="end" font-family="'DM Mono',monospace" font-size="9.5" fill="#1E3A5F" data-radar-ax="7" data-radar-line="1">Automatisme</text>
+      </svg>
     </div>
 
     <div class="hero-cta">
@@ -492,181 +525,6 @@ footer {
     </div>
   </div>
 </div>
-
-<!-- COMPÉTENCES -->
-<div class="competences-wrapper" id="competences">
-  <div class="competences-inner">
-    <div class="section-header">
-      <div class="section-label" data-i18n="skills.label">Compétences & Postes visés</div>
-      <h2 class="section-title" data-i18n="skills.title">Familles de métiers & outils maîtrisés</h2>
-    </div>
-
-    <div class="comp-grid">
-
-      <div class="comp-card" style="border-color:var(--copper);border-width:2px;background:var(--copper-light);">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#C4622D;"></div>
-          <div class="comp-card-title" style="color:var(--copper);">Gestion de projet industriel</div>
-          <span style="margin-left:auto;font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--copper);color:white;padding:.15rem .5rem;border-radius:3px;">Priorité 1</span>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.projet1">Ingénieur Projet</div>
-          <div class="comp-job" data-i18n="j.projet2">Chef de Projet Industriel</div>
-          <div class="comp-job" data-i18n="j.projet3">Ingénieur Projet Industrialisation</div>
-          <div class="comp-job" data-i18n="j.projet4">Chargé de Projet Déploiement</div>
-          <div class="comp-job" data-i18n="j.projet5">Ingénieur Projet Investissement</div>
-          <div class="comp-job" data-i18n="j.projet6">Coordinateur de Projet Industriel</div>
-        </div>
-      </div>
-
-      <div class="comp-card" style="border-color:var(--steel);border-width:2px;background:var(--steel-light);">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#2E5FA3;"></div>
-          <div class="comp-card-title" data-i18n="c1.title" style="color:var(--steel);">Méthodes & Industrialisation</div>
-          <span style="margin-left:auto;font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--steel);color:white;padding:.15rem .5rem;border-radius:3px;" data-i18n="c1.priority">Priorité 2</span>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.meth1">Ingénieur Méthodes</div>
-          <div class="comp-job" data-i18n="j.meth2">Ingénieur Industrialisation</div>
-          <div class="comp-job" data-i18n="j.meth3">Ingénieur Process</div>
-          <div class="comp-job" data-i18n="j.meth4">Ingénieur Industrialisation & Amélioration Continue</div>
-        </div>
-      </div>
-
-      <div class="comp-card" style="border-color:var(--green);border-width:2px;background:var(--green-bg);">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#1A6648;"></div>
-          <div class="comp-card-title" style="color:var(--green);">Management opérationnel & Production</div>
-          <span style="margin-left:auto;font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--green);color:white;padding:.15rem .5rem;border-radius:3px;">Priorité 3</span>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.ops1">Ingénieur de Production</div>
-          <div class="comp-job" data-i18n="j.ops2">Coordinateur de Production</div>
-          <div class="comp-job" data-i18n="j.ops3">Ingénieur Planification & Ordonnancement</div>
-          <div class="comp-job" data-i18n="j.ops4">Pilote de Flux</div>
-          <div class="comp-job" data-i18n="j.ops5">Operations Manager Junior</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#C4622D;"></div>
-          <div class="comp-card-title" data-i18n="c3.title">Pilotage de la performance</div>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.perf1">Ingénieur Performance Industrielle</div>
-          <div class="comp-job" data-i18n="j.perf2">Ingénieur Pilotage de la Performance</div>
-          <div class="comp-job" data-i18n="j.perf3">Chargé de Mission Performance Opérationnelle</div>
-          <div class="comp-job" data-i18n="j.perf4">Responsable Performance & Indicateurs</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#7A4800;"></div>
-          <div class="comp-card-title" data-i18n="c5.title">Simulation & Dimensionnement</div>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.simu1">Ingénieur Simulation de Flux</div>
-          <div class="comp-job" data-i18n="j.simu2">Ingénieur Dimensionnement Industriel</div>
-          <div class="comp-job" data-i18n="j.simu3">Ingénieur Études & Capacités</div>
-          <div class="comp-job" data-i18n="j.simu4">Ingénieur Flux & Logistique Industrielle</div>
-          <div class="comp-job" data-i18n="j.simu5">Ingénieur Ordonnancement & Simulation</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#C4622D;"></div>
-          <div class="comp-card-title" data-i18n="c7.title">Amélioration continue & Qualité</div>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.lean1">Ingénieur Amélioration Continue</div>
-          <div class="comp-job" data-i18n="j.lean2">Ingénieur Lean Manufacturing</div>
-          <div class="comp-job" data-i18n="j.lean3">Ingénieur Qualité Production</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#1A6648;"></div>
-          <div class="comp-card-title" data-i18n="c6.title">Supply Chain & Logistique industrielle</div>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.sc1">Ingénieur Supply Chain</div>
-          <div class="comp-job" data-i18n="j.sc2">Ingénieur Logistique Industrielle</div>
-          <div class="comp-job" data-i18n="j.sc3">Ingénieur Planification</div>
-          <div class="comp-job" data-i18n="j.sc4">Ingénieur Flux de Production</div>
-          <div class="comp-job" data-i18n="j.sc5">Coordinateur Supply Chain</div>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-card-header">
-          <div class="comp-dot" style="background:#6A6A62;"></div>
-          <div class="comp-card-title" data-i18n="c8.title">Transformation digitale & SI industriel</div>
-        </div>
-        <div class="comp-jobs">
-          <div class="comp-job" data-i18n="j.si1">Ingénieur Transformation Digitale</div>
-          <div class="comp-job" data-i18n="j.si2">Ingénieur Intégration SI</div>
-          <div class="comp-job" data-i18n="j.si3">Business Analyst Industrie</div>
-          <div class="comp-job" data-i18n="j.si4">MOA Industrielle</div>
-          <div class="comp-job" data-i18n="j.si5">Ingénieur MES/ERP</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="comp-tools-section">
-      <div class="comp-tools-title" data-i18n="tools.section.title">Outils & technologies maîtrisés</div>
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s1">Simulation & Data</div>
-          <div class="tools-grid">
-            <span class="tool-badge">FlexSim</span><span class="tool-badge">Python (pandas, scipy)</span><span class="tool-badge">Matlab</span><span class="tool-badge">Power BI</span><span class="tool-badge">Excel avancé</span><span class="tool-badge">SQL</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s2">Qualité & Amélioration continue</div>
-          <div class="tools-grid">
-            <span class="tool-badge">Lean</span><span class="tool-badge">5S</span><span class="tool-badge">Kaizen</span><span class="tool-badge">SMED</span><span class="tool-badge">Kanban</span><span class="tool-badge">VSM</span><span class="tool-badge">AMDEC</span><span class="tool-badge">TOC</span><span class="tool-badge">Ishikawa</span><span class="tool-badge">8D</span><span class="tool-badge">Cartes X-bar/R</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s3">ERP & Systèmes d'information</div>
-          <div class="tools-grid">
-            <span class="tool-badge">SAP S/4HANA</span><span class="tool-badge">ERPNext</span><span class="tool-badge">Matrix42</span><span class="tool-badge">Docker</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s4">Projet & Modélisation</div>
-          <div class="tools-grid">
-            <span class="tool-badge">MS Project</span><span class="tool-badge">Jira</span><span class="tool-badge">Notion</span><span class="tool-badge">ClickUp</span><span class="tool-badge">BPMN 2.0</span><span class="tool-badge">Draw.io</span><span class="tool-badge">Lucidchart</span><span class="tool-badge">ProcessMaker</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s5">Robotique & Automatisme</div>
-          <div class="tools-grid">
-            <span class="tool-badge">Roboguide Fanuc</span><span class="tool-badge">Grafcet</span><span class="tool-badge">Ladder</span><span class="tool-badge">Arduino</span><span class="tool-badge">Raspberry Pi</span><span class="tool-badge">C++</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s6">Procédés & CAO</div>
-          <div class="tools-grid">
-            <span class="tool-badge">SolidWorks</span><span class="tool-badge">Fraiseuse CNC</span><span class="tool-badge">Tour</span><span class="tool-badge">Thermoformage</span><span class="tool-badge">Composite (résine)</span><span class="tool-badge">Moulage métallique</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s7">Développement</div>
-          <div class="tools-grid">
-            <span class="tool-badge">Python</span><span class="tool-badge">AppSheet</span><span class="tool-badge">Android Studio</span><span class="tool-badge">HTML/CSS</span><span class="tool-badge">SQL</span><span class="tool-badge">Base44</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <!-- PROJETS -->
 <div class="section" id="projets">
@@ -684,7 +542,7 @@ footer {
         <div class="pcard-top">
           <div class="pcard-meta">
             <span class="pcard-cat" data-i18n="p01.cat">Management opérationnel · Pilotage d'activité</span>
-            <span class="badge badge-copper" data-i18n="p01.badge">BPCE + PennyLane</span>
+            <span class="badge badge-copper" data-i18n="p01.badge">BPCE <span style="font-weight:400;opacity:.75">· 2ème groupe bancaire français</span> + PennyLane <span style="font-weight:400;opacity:.75">· logiciel comptabilité SaaS</span></span>
           </div>
         </div>
         <h3 class="pcard-title" data-i18n="p01.title">Manager d'équipe sur 2 dossiers clients — pilotage opérationnel, qualité et relation client</h3>
@@ -718,7 +576,7 @@ footer {
         <div class="pcard-top">
           <div class="pcard-meta">
             <span class="pcard-cat" data-i18n="p02.cat">Audit industriel · Simulation · Amélioration continue</span>
-            <span class="badge badge-gray" data-i18n="p02.badge">Mission interne — second site de production</span>
+            <span class="badge badge-gray" data-i18n="p02.badge">Mission interne <span style="font-weight:400;opacity:.75">· Castles Technology, leader mondial terminaux de paiement</span></span>
           </div>
         </div>
         <h3 class="pcard-title" data-i18n="p02.title">Diagnostic d'un site de réparation — le goulot n'était pas là où tout le monde croyait</h3>
@@ -752,7 +610,7 @@ footer {
         <div class="pcard-top">
           <div class="pcard-meta">
             <span class="pcard-cat" data-i18n="p03.cat">Déploiement SI · Logistique internationale</span>
-            <span class="badge badge-green" data-i18n="p03.badge">myPOS — Fintech européenne, +500 000 clients</span>
+            <span class="badge badge-green" data-i18n="p03.badge">myPOS <span style="font-weight:400;opacity:.75">· Fintech européenne · +500 000 marchands</span></span>
           </div>
         </div>
         <h3 class="pcard-title" data-i18n="p03.title">Système de gestion des commandes déployé dans 5 pays en 14 jours</h3>
@@ -785,7 +643,7 @@ footer {
         <div class="pcard-top">
           <div class="pcard-meta">
             <span class="pcard-cat" data-i18n="p04.cat">Intégration SI · Gestion de projet grand compte</span>
-            <span class="badge badge-steel" data-i18n="p04.badge">BNP Paribas — 1ère banque française</span>
+            <span class="badge badge-steel" data-i18n="p04.badge">BNP Paribas <span style="font-weight:400;opacity:.75">· 1ère banque française · ~200 000 collaborateurs</span></span>
           </div>
         </div>
         <h3 class="pcard-title" data-i18n="p04.title">Intégration SI grand compte — plateforme de service pour la gestion de parc de terminaux</h3>
@@ -794,7 +652,7 @@ footer {
           <span class="ctx-label" data-i18n="p04.ctx.label">Contexte & enjeu</span>
           <span data-i18n="p04.context">BNP Paribas a confié la gestion de son parc de <strong>60 000+ terminaux</strong> en France. Contrat majeur nécessitant une plateforme de service complète intégrant 5 systèmes différents. Délai : 7 mois.</span>
         </div>
-        <p class="pcard-body" data-i18n="p04.body">En appui du transition manager senior, j'ai formalisé <strong>12 processus en BPMN</strong> (Draw.io, Lucidchart), piloté l'intégration de 5 systèmes (ticketing, logistique, centre d'appels), conduit les cycles <strong>UAT</strong> avec les utilisateurs BNP et configuré le centre d'appels. Mission terrain en Roumanie : audit et validation d'un centre d'appels partenaire avant go-live national.</p>
+        <p class="pcard-body" data-i18n="p04.body">En appui du transition manager senior, j'ai formalisé <strong>12 processus en BPMN</strong> (Draw.io, Lucidchart), piloté l'intégration de 5 systèmes (ticketing, logistique, centre d'appels), conduit les cycles <strong>UAT</strong> avec les utilisateurs BNP et configuré le centre d'appels.</p>
         <div class="pcard-tools">
           <span class="tools-label" data-i18n="tools.label">Méthodes & outils</span>
           <div class="tools-list">
@@ -819,7 +677,7 @@ footer {
         <div class="pcard-top">
           <div class="pcard-meta">
             <span class="pcard-cat" data-i18n="p05.cat">Mission terrain internationale · Audit opérationnel</span>
-            <span class="badge badge-amber" data-i18n="p05.badge">Centre d'appels partenaire — Bucarest, Roumanie</span>
+            <span class="badge badge-amber" data-i18n="p05.badge">Mission terrain <span style="font-weight:400;opacity:.75">· Bucarest, Roumanie · dans le cadre du projet BNP Paribas</span></span>
           </div>
         </div>
         <h3 class="pcard-title" data-i18n="p05.title">Audit sur site en Roumanie — Sélection des agents & transfert opérationnel</h3>
@@ -852,7 +710,7 @@ footer {
         <div class="pcard-top">
           <div class="pcard-meta">
             <span class="pcard-cat" data-i18n="p06.cat">Transformation SI · ERP · Étude de faisabilité</span>
-            <span class="badge badge-gray" data-i18n="p06.badge">Mission interne</span>
+            <span class="badge badge-gray" data-i18n="p06.badge">Mission interne <span style="font-weight:400;opacity:.75">· Castles Technology</span></span>
           </div>
         </div>
         <h3 class="pcard-title" data-i18n="p06.title">Étude de faisabilité ERP open source — remplacement d'un logiciel legacy</h3>
@@ -873,7 +731,7 @@ footer {
         <div class="pcard-top">
           <div class="pcard-meta">
             <span class="pcard-cat" data-i18n="p07.cat">Application mobile · Contrôle qualité · Développement</span>
-            <span class="badge badge-gray" data-i18n="p07.badge">Mission interne — Enjeu qualité critique</span>
+            <span class="badge badge-gray" data-i18n="p07.badge">Mission interne <span style="font-weight:400;opacity:.75">· Castles Technology · Enjeu qualité critique</span></span>
           </div>
         </div>
         <h3 class="pcard-title" data-i18n="p07.title">Application Android de contrôle qualité par reconnaissance optique</h3>
@@ -946,6 +804,165 @@ footer {
   </div>
 </div>
 
+<!-- COMPÉTENCES -->
+<div class="competences-wrapper" id="competences">
+  <div class="competences-inner">
+    <div class="section-header">
+      <div class="section-label" data-i18n="skills.label">Compétences & Postes visés</div>
+      <h2 class="section-title" data-i18n="skills.title">Familles de métiers & outils maîtrisés</h2>
+    </div>
+
+    <div class="comp-grid">
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#1A4A8C;"></div>
+          <div class="comp-card-title">Gestion de projet industriel</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.projet1">Ingénieur Projet</div>
+          <div class="comp-job" data-i18n="j.projet2">Chef de Projet Industriel</div>
+          <div class="comp-job" data-i18n="j.projet3">Ingénieur Projet Industrialisation</div>
+          <div class="comp-job" data-i18n="j.projet4">Chargé de Projet Déploiement</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#2E5FA3;"></div>
+          <div class="comp-card-title" data-i18n="c1.title" style="color:var(--steel);">Méthodes & Industrialisation</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.meth1">Ingénieur Méthodes</div>
+          <div class="comp-job" data-i18n="j.meth2">Ingénieur Industrialisation</div>
+          <div class="comp-job" data-i18n="j.meth3">Ingénieur Process</div>
+          <div class="comp-job" data-i18n="j.meth4">Ingénieur Industrialisation & Amélioration Continue</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#1A6648;"></div>
+          <div class="comp-card-title" style="color:var(--green);">Management opérationnel & Production</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.ops1">Ingénieur de Production</div>
+          <div class="comp-job" data-i18n="j.ops2">Coordinateur de Production</div>
+          <div class="comp-job" data-i18n="j.ops3">Ingénieur Planification & Ordonnancement</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#1A4A8C;"></div>
+          <div class="comp-card-title" data-i18n="c3.title">Pilotage de la performance</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.perf1">Ingénieur Performance Industrielle</div>
+          <div class="comp-job" data-i18n="j.perf2">Ingénieur Pilotage de la Performance</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#7A4800;"></div>
+          <div class="comp-card-title" data-i18n="c5.title">Simulation & Dimensionnement</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.simu1">Ingénieur Simulation de Flux</div>
+          <div class="comp-job" data-i18n="j.simu2">Ingénieur Dimensionnement Industriel</div>
+          <div class="comp-job" data-i18n="j.simu5">Ingénieur Ordonnancement & Simulation</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#1A4A8C;"></div>
+          <div class="comp-card-title" data-i18n="c7.title">Amélioration continue & Qualité</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.lean1">Ingénieur Amélioration Continue</div>
+          <div class="comp-job" data-i18n="j.lean2">Ingénieur Lean Manufacturing</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#1A6648;"></div>
+          <div class="comp-card-title" data-i18n="c6.title">Supply Chain & Logistique industrielle</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.sc1">Ingénieur Supply Chain</div>
+          <div class="comp-job" data-i18n="j.sc2">Ingénieur Logistique Industrielle</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-dot" style="background:#6A6A62;"></div>
+          <div class="comp-card-title" data-i18n="c8.title">Transformation digitale & SI industriel</div>
+        </div>
+        <div class="comp-jobs">
+          <div class="comp-job" data-i18n="j.si1">Ingénieur Transformation Digitale</div>
+          <div class="comp-job" data-i18n="j.si2">Ingénieur Intégration SI</div>
+          <div class="comp-job" data-i18n="j.si5">Ingénieur MES/ERP</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="comp-tools-section">
+      <div class="comp-tools-title" data-i18n="tools.section.title">Outils & technologies maîtrisés</div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s1">Simulation & Data</div>
+          <div class="tools-grid">
+            <span class="tool-badge">FlexSim</span><span class="tool-badge">Python (pandas, scipy)</span><span class="tool-badge">Matlab</span><span class="tool-badge">Power BI</span><span class="tool-badge">Excel avancé</span><span class="tool-badge">SQL</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s2">Qualité & Amélioration continue</div>
+          <div class="tools-grid">
+            <span class="tool-badge">Lean</span><span class="tool-badge">5S</span><span class="tool-badge">Kaizen</span><span class="tool-badge">SMED</span><span class="tool-badge">Kanban</span><span class="tool-badge">VSM</span><span class="tool-badge">AMDEC</span><span class="tool-badge">TOC</span><span class="tool-badge">Ishikawa</span><span class="tool-badge">8D</span><span class="tool-badge">Cartes X-bar/R</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s3">ERP & Systèmes d'information</div>
+          <div class="tools-grid">
+            <span class="tool-badge">SAP S/4HANA</span><span class="tool-badge">ERPNext</span><span class="tool-badge">Matrix42</span><span class="tool-badge">Docker</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s4">Projet & Modélisation</div>
+          <div class="tools-grid">
+            <span class="tool-badge">MS Project</span><span class="tool-badge">Jira</span><span class="tool-badge">Notion</span><span class="tool-badge">ClickUp</span><span class="tool-badge">BPMN 2.0</span><span class="tool-badge">Draw.io</span><span class="tool-badge">Lucidchart</span><span class="tool-badge">ProcessMaker</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s5">Robotique & Automatisme</div>
+          <div class="tools-grid">
+            <span class="tool-badge">Roboguide Fanuc</span><span class="tool-badge">Grafcet</span><span class="tool-badge">Ladder</span><span class="tool-badge">Arduino</span><span class="tool-badge">Raspberry Pi</span><span class="tool-badge">C++</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s6">Procédés & CAO</div>
+          <div class="tools-grid">
+            <span class="tool-badge">SolidWorks</span><span class="tool-badge">Fraiseuse CNC</span><span class="tool-badge">Tour</span><span class="tool-badge">Thermoformage</span><span class="tool-badge">Composite (résine)</span><span class="tool-badge">Moulage métallique</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;" data-i18n="tools.s7">Développement</div>
+          <div class="tools-grid">
+            <span class="tool-badge">Python</span><span class="tool-badge">AppSheet</span><span class="tool-badge">Android Studio</span><span class="tool-badge">HTML/CSS</span><span class="tool-badge">SQL</span><span class="tool-badge">Base44</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -961,6 +978,8 @@ footer {
 <script>
 const translations = {
   fr: {
+    "radar.title": "Profil de compétences",
+    "radar.note": "Compétences issues de la formation et de l'expérience terrain — certaines encore en attente d'une première mise en pratique professionnelle.",
     "nav.projects": "Projets",
     "nav.skills": "Compétences",
     "nav.about": "À propos",
@@ -974,7 +993,7 @@ const translations = {
     "projects.label": "Projets réalisés", "projects.title": "Missions & réalisations en alternance",
     "tools.label": "Méthodes & outils",
     "p01.cat": "Management opérationnel · Pilotage d'activité",
-    "p01.badge": "BPCE + PennyLane",
+    "p01.badge": "BPCE <span style='font-weight:400;opacity:.75'>· 2ème groupe bancaire français</span> + PennyLane <span style='font-weight:400;opacity:.75'>· logiciel de comptabilité SaaS</span>",
     "p01.title": "Manager d'équipe sur 2 dossiers clients — pilotage opérationnel, qualité et relation client",
     "p01.hook": "\"Quand il n'y avait personne pour structurer l'activité, j'ai repris le pilotage.\"",
     "p01.ctx.label": "Contexte & enjeu",
@@ -1101,7 +1120,9 @@ const translations = {
     "hero.target": "Cible prioritaire : Chef de Projet Industriel · Ingénieur Méthodes & Industrialisation · Grand groupe ou ETI · Île-de-France · Ouvert à l'international",
   },
   en: {
-    "nav.projects": "Projects", "nav.skills": "Skills", "nav.about": "About",
+    "radar.title": "Skills profile",
+    "radar.note": "Skills from both academic training and field experience — some yet to be applied in a professional context.",
+    "nav.projects": "Projects",
     "hero.eyebrow": "Master 2 · Paris-Saclay · Complex Systems Engineering",
     "hero.avail": "Available · Permanent · September 2026",
     "hero.title": "Methods & Industrialization Engineer · Operations Management · Project Management",
@@ -1112,7 +1133,7 @@ const translations = {
     "projects.label": "Projects", "projects.title": "Missions & achievements",
     "tools.label": "Methods & tools",
     "p01.cat": "Operational management · Activity steering",
-    "p01.badge": "BPCE + PennyLane",
+    "p01.badge": "BPCE <span style='font-weight:400;opacity:.75'>· France's 2nd largest banking group</span> + PennyLane <span style='font-weight:400;opacity:.75'>· accounting SaaS platform</span>",
     "p01.title": "Team manager on 2 client accounts — operational management, quality & client relations",
     "p01.hook": "\"When there was no one to structure the activity, I took over.\"",
     "p01.ctx.label": "Context & stakes",
@@ -1149,7 +1170,7 @@ const translations = {
     "p04.hook": "\"Build from scratch in 7 months what normally takes 18.\"",
     "p04.ctx.label": "Context & stakes",
     "p04.context": "BNP Paribas entrusted the management of its <strong>60,000+ terminal fleet</strong> in France. Major contract requiring a complete service platform integrating 5 different systems. Deadline: 7 months.",
-    "p04.body": "Supporting the senior transition manager, I formalized <strong>12 BPMN processes</strong> (Draw.io, Lucidchart), led the integration of 5 systems, conducted <strong>UAT</strong> cycles with BNP end users and configured the call center. On-site mission in Romania: audit and validation of a partner call center before national go-live.",
+    "p04.body": "Supporting the senior transition manager, I formalized <strong>12 BPMN processes</strong> (Draw.io, Lucidchart), led the integration of 5 systems, conducted <strong>UAT</strong> cycles with BNP end users and configured the call center.",
     "p04.t1": "<strong>BPMN 2.0</strong> — end-to-end business process modeling",
     "p04.t2": "<strong>UAT</strong> — end-user acceptance testing",
     "p04.t3": "<strong>Steering committee</strong> — issue escalation, decision support",
@@ -1241,6 +1262,29 @@ const translations = {
 };
 
 let currentLang = 'fr';
+
+// Radar label update
+function updateRadar(lang) {
+  const labelsFr = ['Gestion|de projet', 'Méthodes &|Industrialisation', 'Dimensionnement|& Simulation', 'Amélioration|continue', 'Pilotage|opérationnel', 'Data &|Analyse', 'SI & Transfo.|digitale', 'Robotique &|Automatisme'];
+  const labelsEn = ['Project|Management', 'Methods &|Industrialization', 'Dimensioning|& Simulation', 'Continuous|Improvement', 'Operational|Management', 'Data &|Analysis', 'IS & Digital|Transformation', 'Robotics &|Automation'];
+  const labels = lang === 'en' ? labelsEn : labelsFr;
+  const texts = document.querySelectorAll('[data-radar-ax]');
+  // Group by ax
+  const byAx = {};
+  texts.forEach(t => {
+    const ax = t.getAttribute('data-radar-ax');
+    const line = t.getAttribute('data-radar-line');
+    if (!byAx[ax]) byAx[ax] = {};
+    byAx[ax][line] = t;
+  });
+  Object.keys(byAx).forEach(ax => {
+    const parts = labels[ax].split('|');
+    parts.forEach((p, j) => {
+      if (byAx[ax][j]) byAx[ax][j].textContent = p.replace('&amp;', '&');
+    });
+  });
+}
+
 function setLanguage(lang) {
   currentLang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1248,6 +1292,7 @@ function setLanguage(lang) {
     const t = translations[lang]?.[key];
     if (t !== undefined) el.innerHTML = t;
   });
+  updateRadar(lang);
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
